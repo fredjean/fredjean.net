@@ -38,7 +38,7 @@
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -56,24 +56,21 @@ set :images_dir, 'images'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
   # activate :cache_buster
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
-  # require "middleman-smusher"
-  # activate :smusher
-
-  # Or use a different image path
-  # set :http_path, "/Content/images/"
+  require "middleman-smusher"
+  activate :smusher
 end
 
 set :markdown_engine, :redcarpet
@@ -89,3 +86,12 @@ activate :blog do |blog|
 end
 
 activate :directory_indexes
+
+activate :s3_sync do |sync|
+  sync.bucket = 'fredjean.net'
+  sync.region = 'us-east-1'
+  sync.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
+  sync.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+  sync.delete = true
+  sync.after_build = false
+end

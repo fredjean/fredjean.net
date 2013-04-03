@@ -1,0 +1,71 @@
+---
+layout: post
+title: Groovy Fizz and Buzz
+published: true
+---
+<p>The <a href="http://tickletux.wordpress.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/">FizzBuzz programming interview</a> question <a href="http://www.dougalstanton.net/blog/index.php/2008/02/26/my-shame-is-complete">raised it's head again</a>. I've managed to resist the temptation to implement it in any languages so far. Until this morning that is...</p>
+<p>So I fired up the Groovy Console and played a little. A nice feature of the console is that it displays a history of the scripts it ran. This allows me to present an evolution of my FizzBuzz program.</p>
+<p>I first started with a rather naive implementation:</p>
+<div class="CodeRay">
+  <div class="code"><pre>(1..100).each { 
+  def out = &quot;&quot; 
+  if ((it % 3) == 0) { out += &quot;Fizz&quot; } 
+  if ((it % 5) == 0) { out += &quot;Buzz&quot; } 
+  if (out == &quot;&quot; ) { out = it } 
+  println out
+}</pre></div>
+</div>
+
+<p>Not bad for something that I came up with in about 10 minutes. It doesn't really take advantage of Groovy's features though. So I refined it a bit by using the ternary operator:</p>
+<div class="CodeRay">
+  <div class="code"><pre>(1..100).each {
+  def out = (it % 3) == 0 ? &quot;Fizz&quot; : &quot;&quot;
+  out += (it % 5) == 0 ? &quot;Buzz&quot; : &quot;&quot;
+  println (out == &quot;&quot; ? it : out)
+}</pre></div>
+</div>
+
+<p>This is a slight improvement over the first version. I still didn't feel that this was Groovy enough for me. I decided to play with the List collect method. This applies a closure to all items in a collection. The first pass was the following code segment:</p>
+<div class="CodeRay">
+  <div class="code"><pre>println ((1..100).collect {
+  def out = (it % 3) == 0 ? &quot;Fizz&quot; : &quot;&quot;
+  out += (it % 5) == 0 ? &quot;Buzz&quot; : &quot;&quot;
+  out == &quot;&quot; ? it : out
+})</pre></div>
+</div>
+
+<p>This ended up printing the list returned by the collect method. Really close, but not quite what I was hoping for. After all, the challenge is to print the results, not quite a string representation of a list. It was easy then to go from the code above to the code below:</p>
+<div class="CodeRay">
+  <div class="code"><pre>(1..100).collect {
+  def out = (it % 3) == 0 ? &quot;Fizz&quot; : &quot;&quot;
+  out += (it % 5) == 0 ? &quot;Buzz&quot; : &quot;&quot;
+  out ?: it
+}.each { println it }</pre></div>
+</div>
+
+<p>This printed the list just like the first pass. It's definitively Groovier (in my opinion) than the original implementation. It still does fall short of the capabilities of Groovy.</p>
+<p>So here's my final implementation:</p>
+<div class="CodeRay">
+  <div class="code"><pre>(1..100).collect {
+     ((it % 3) == 0 ? &quot;Fizz&quot; : &quot;&quot;) &lt;&lt; ((it % 5) == 0 ? &quot;Buzz&quot; : &quot;&quot;) ?: it
+}.each { println it }</pre></div>
+</div>
+
+<p>This takes full advantage of Groovy's power. It is a little harder to read, which is a downside. It does take full advantage of many of Groovy's powerful features:</p>
+<ol>
+  <li>A range to generate the list of numbers to process. Ranges return an iterator that iterates from the start of the range to the end of the range.</li>
+
+  <li>The collect method which applies a closure to each item in the collection (or iterator) and returns the results as a list.</li>
+
+  <li>The each method, which iterates through a list and applies a closure to it. It returns the collection that it iterated through.</li>
+
+  <li>Closures, which are implemented quite well in Groovy.</li>
+
+  <li>Operator overloading. The &lt;&lt; operator is overloaded on the String class to concatenate two Strings together.</li>
+
+  <li>The brand new Elvis operator (?:) which returns the alternate value if the expression evaluates to false.</li>
+
+  <li>Groovy returns the last expression of a block as the result of the block. This includes closures and methods.</li>
+</ol>
+<p>I do think that I'll incorporate this question in future interviews. It has quite a few interesting subtleties and implementations that are only rivaled by the Singleton pattern. I guess that the last group of interviewees got it a little easier...</p><br />
+<div class="blogger-post-footer"><img class="posterous_download_image" src="https://blogger.googleusercontent.com/tracker/2472972155627143715-7315085765090019174?l=blog.fredjean.net" height="1" alt="" width="1" /></div>

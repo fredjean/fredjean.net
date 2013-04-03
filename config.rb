@@ -79,11 +79,16 @@ set :markdown,  :fenced_code_blocks => true,
                 :smartypants => true
 
 activate :blog do |blog|
-  blog.prefix = "blog"
+  blog.prefix = ""
   blog.permalink = ":title"
   blog.layout = blog
   blog.default_extension = ".markdown"
+  blog.tag_template = "tag.html"
+  blog.calendar_template = "calendar.html"
 end
+
+page "/feed.xml", :layout => false
+
 
 activate :directory_indexes
 

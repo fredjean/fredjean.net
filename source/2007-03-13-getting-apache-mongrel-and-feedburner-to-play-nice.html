@@ -1,0 +1,32 @@
+---
+layout: blog
+title: Getting Apache, Mongrel and FeedBurner to Play Nice
+published: true
+---
+<p>
+I moved my blog from Textdrive to a Slicehost slice on Sunday. For the most part, the migration went well. Once I had Typo up and running on the slice, I just had to copy my theme, a few resource files and use a dump of the database to rebuild the content.
+</p><p>
+I had a little more trouble getting Apache to proxy requests to Mongrel and redirect all feed requests to FeedBurner (except for FeedBurner's of course...). I finally got mod_rewrite and mod_proxy to cooperate.
+</p><p>
+The first thing to remember is that the normal proxy approach will prevent the rewrite rules from working. Instead of using ProxyPass statements, I had to use RewriteRule. You'll need to enable the proxy, proxy_http and rewrite modules. Next, you'll need the following rules:
+</p>
+<div class="CodeRay">
+  <div class="code"><pre>ProxyRequests Off
+&lt;Proxy *&gt;
+Order deny,allow
+Allow from all
+&lt;/Proxy&gt;
+
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} !FeedBurner
+RewriteRule ^/xml/(atom|rss|rss20)/feed.xml$ http://feeds.feedburner.com/fredjean/outofmymind [R=301,L]
+RewriteRule ^/(.*)$ http://localhost:3000/$1 [P]</pre></div>
+</div>
+<p>
+The Proxy blocks enables the proxy module. The rewrite module will not be able to proxy the request to Mongrel if it is not set.
+</p><p>
+The RewriteCond line determines whether the user agent identifies itself as being something else than FeedBurner. If it is, the client is redirected to the FeedBurner URL. This allows FeedBurner to pass through and retrieve the feed. The redirect here is marked as being permanent (301 is the permanent redirect HTTP response code). We also tell RewriteRule to stop processing the rules at that point.
+</p><p>
+The last line proxies the request to Mongrel so it can be handled. Mongrel in turns runs the Typo blog engine. Once Typo is done, the response travels back through Mongrel, apache and makes its way back to the client.
+</p>
+<div class="blogger-post-footer"><img class="posterous_download_image" src="https://blogger.googleusercontent.com/tracker/2472972155627143715-3195114464278852829?l=blog.fredjean.net" height="1" alt="" width="1" /></div>

@@ -1,0 +1,31 @@
+---
+layout: post
+title: Application Performance Improvement Is an Iterative Process
+published: true
+---
+<p>My first mandate when I joined <a href="http://kenai.com/">Project Kenai</a> was to improve it's performance. Kenai wasn't known for being speedy back then. We had some serious performance issues with both page rendering in the browser as well as generating the content on the server side.</p>
+<p>I had work on projects before were performance testing (and the resulting avalanche of bug reports from it) were held off until the QA phase of the project. A small team of QA engineers would write scripts that exercised the application to get performance data and generate information on where things were slow. I had a few issues with this approach:</p>
+<ol>
+  <li>The testing almost always occurred near the end of a release. Many of the performance issues discovered in this process could not be fully resolved in the time frame allocated for the release itself. Most were preempted by other feature bugs as well. Performance always seemed to be job 1.0.1</li>
+
+  <li>The data never provided information on where the application was spending it's time. This lead to a fair amount of time spent looking at the application code and database queries to see where the hotspot were.</li>
+
+  <li>The performance tests occurred based on a static set of features and actions. Each URL would be tested in isolation. There were none of the interactions that occur from multiple users doing different things in the application at the same time.</li>
+</ol>
+<p>Doing performance testing was still valuable. It helped us understand where we needed to do more work. It was just too little too late for many projects that I worked on.</p>
+<p>I have tried different approaches in the past. I would instrument the application that I worked on to get data, but that was usually done against a development or QA environment. Reading the logs to find the instrumentation data made it difficult to extract valuable information. The instrumentation had a measurable impact on the response time so it was generally turned off in the production deployments.</p>
+<p>Performance testing was different with Project Kenai. Kenai uses the <a href="http://www.newrelic.com/">NewRelic Rails plugin</a> to get performance data from the application and generates reports that helps understand where the application is spending it's time and what areas could benefit for further investigation. Here is how we normally deal with performance issues:</p>
+<ol>
+  <li>We use NewRelic to determine what functions are the slowest and have the most impact to our users.</li>
+
+  <li>I go through the web site the morning after a deployment to see how the deployment changed the performance of the application.</li>
+
+  <li>I schedule one or two performance issues if nothing stands out of the ordinary. Any serious performance degradation takes precedence of course.</li>
+
+  <li>I use the development mode to research the performance problem and work toward a solution. My work environment has different performance than our production and staging sites, so I look for relative improvements rather than absolute measurements.</li>
+
+  <li>I review the impact of the change in our staging environments. This helps me understand the performance of the application with a full production-like dataset as compared to the developer dataset. Many performance issues only showed themselves when running against a larger dataset than what was available to me in my development environment.</li>
+</ol>
+<p>This cycle allowed the team to continually improve the performance of the application. We still have work to do with regards to performance. Most of the work that is left to do is in areas that are difficult to resolve, but we know where they are and we keep looking for ways to keep improving the performance.</p>
+
+<div class="blogger-post-footer"><img class="posterous_download_image" src="https://blogger.googleusercontent.com/tracker/2472972155627143715-810948455307423193?l=blog.fredjean.net" height="1" alt="" width="1" /></div>

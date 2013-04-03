@@ -1,0 +1,9 @@
+---
+layout: post
+title: Do You Really Need That Jar File?
+published: true
+---
+<p>Many Java projects accumulate Jar files. Their numbers just grow until you are not exactly sure why or whether a Jar file is still in use. Traditionally, you answer the question of whether you still need a specific file by removing it from the class path, attempting to build your project, deploying it and seeing whether the application works or not.</p>
+<p><a href="http://www.linkedin.com/pub/2/035/080" title="Kyrill's profile on Linked In">Kyrill Alyoshin</a> has released a beta version of his loosejar project. The goal is to determine what jar files are not being used by your application. It does so by analyzing what classes are loaded by which class loader. The result is a report that is presented via JMX or through the console (once the VM is shutdown).</p>
+<p>The project is hosted on <a href="http://code.google.com/p/loosejar/" title="Loosejar project URL on Google Code.">Google Code</a> and it is released under the Apache Software License v2.0.</p>
+<div class="blogger-post-footer"><img class="posterous_download_image" src="https://blogger.googleusercontent.com/tracker/2472972155627143715-1077212276035373077?l=blog.fredjean.net" height="1" alt="" width="1" /></div>

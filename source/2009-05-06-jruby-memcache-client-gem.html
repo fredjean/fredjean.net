@@ -1,0 +1,30 @@
+---
+layout: post
+title: JRuby MemCache Client Gem
+published: true
+---
+<p>I wrote a <a href="http://fredjean.net/2009/02/18/memcache-session-store-with-jruby-on-rails">post</a> about using the jruby_memcache_client Rails plugin to manage sessions. Since then, <a href="http://github.com/abhiyerra">Abhi Yerra</a> made a <a href="http://github.com/abhiyerra/jruby-memcache-client/tree/master">fork</a> of Ikai Lan's repository and turned it into a gem. I promptly merged his changes into my repository and I am now publishing my own version of the gem (with a few minor changes).</p>
+<p>The new JRuby MemCache Client Gem is API compatible with the Ruby MemCache Client. You should now be able to install the gem into your application and use it directly.</p>
+<p><strong>Installing The Gem</strong></p>
+<p>You need to add github as a source for gems before you can install the new gem. Thsi is a simple one time command to run:</p>
+<p>gem sources -a <a href="http://gems.github.com">http://gems.github.com</a>  The next step is to install the gem as usual:</p>
+<div>jruby -S gem install fredjean-jruby-memcache-client --remote</div>
+<p />
+<div><strong>Using the JRuby MemCache Client Gem</strong></div>
+<p />
+<div>One way to use the JRuby MemCache Client is to add the following to your environment.rb:</div>
+<div>
+<div class="CodeRay">
+  <div class="code"><pre>memcache_options = {
+:namespace =&gt; 'fortaleza:production_live:'
+}
+memcached_servers = [ ENV['MEMCACHED_LOCATION'] || '127.0.0.1:11211']
+
+# Constant used by libs
+CACHE = MemCache.new memcached_servers, memcache_options</pre></div>
+</div>
+
+<p />
+
+</div>
+<p>You will then be able to configure Rails to use the :mem_cache_store for both session and cache store.</p>

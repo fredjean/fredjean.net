@@ -1,0 +1,46 @@
+---
+layout: post
+title: Tweaking My Blog Config
+published: true
+---
+<p>
+I really don't expect to get too much traffic on my blog. FeedBurner tells me that I do have a few subscribers, and a handful of visitors a day. My pride does suffer a little because my <a href="http://redthreadtosophia.blogspot.com/">wife's blog</a> gets more traffic than I do. She does have a much better voice than I do when it comes to blogging. She also says that my content is, well, boring. 
+</p><p>
+Still, I wanted to play a bit with using a pack of mongrels to run typo and to have Apache's httpd serve the static content directly. Application servers are great at generating content based on Ruby on Rails views or a Java Server Page. They don't do as well when it comes down to serving static files from the file system. Apache httpd allows you to configure aliases for different URIs. Thankfully, there were a few well defined URIs that are used to request static content. All I needed to do to offload the static file serving to httpd was to add the following line to my configuration file:
+</p><div class="CodeRay">
+  <div class="code"><pre>AliasMatch ^/(images|files|stylesheets|javascripts)/ &quot;/home/fjean/sites/typo/public/$1/&quot;</pre></div>
+</div>
+<p>
+This will help keep the mongrels focus on generating the dynamic content rather than serving static files. Another advantage is that httpd handles the If-Modified headers correctly. As a result, the browsers can ask for a file only if it was modified after a certain time. If the server responds with a 304 response code, the browser knows to use the cached copy of the file. This does save on bandwidth.
+</p><p>
+I still had a single instance of mongrel running the blog at that point. A single mongrel should be sufficient with my current traffic. I still wanted more though. There was a slight problem though. Apache httpd 2.0.54 (which is installed by default on Ubuntu Dapper) doesn't have the proxy_balancer module. I did try to get it to compile and run on the server earlier without success. I did have another option. Pound is a software based load balancer that is able to balance traffic across multiple mongrel instances. I installed it by running "aptitude install pound". I then had pound installed.
+</p><p>
+The next step was to configure Typo to run on a pack of mongrels. I was in luck since I used the typo gem to install Typo. I used the following command to configure typo:
+</p><div class="CodeRay">
+  <div class="code"><pre>typo config ~/sites/typo bind-address=localhost port-number=4532 web-server=mongrel_cluster threads=3</pre></div>
+</div>
+<p>
+(You should really stop Typo first btw...). I was then able to start the pack by issuing the "typo start ~/sites/typo" command. I did tell Typo to bind the mongrels to the localhost address. The reason is that I didn't want the mongrel processes exposed to the internet. There is really no point unless something is wrong and I need to troubleshoot the pack.
+</p><p>
+The next step was to configure Pound. The configuration file is found under /etc/pound/pound.cfg. I configured pound to bind to localhost:8888 and to forward content to the pack of mongrels. The important configuration bits are:
+</p><div class="CodeRay">
+  <div class="code"><pre>ListenHTTP 127.0.0.1,8888
+
+##
+UrlGroup &quot;.*&quot;
+BackEnd 127.0.0.1,4532,1
+BackEnd 127.0.0.1,4533,1
+BackEnd 127.0.0.1,4534,1
+EndGroup</pre></div>
+</div>
+<p>
+Here again, there was no point in exposing Pound to the internet. Apache httpd will simply proxy traffic to Pound, which will then distribute it.  I then had to enable pound by editing /etc/default/pound and set startup to 1. This was a signal to pound that it was configured. I started it by running /etc/init.d/pound start.  The last configuration change was in the apache configuration file. I changed the proxying RewriteRule to send traffic to Pound rather than the first mongrel:
+</p><div class="CodeRay">
+  <div class="code"><pre>RewriteRule ^/(.*)$ http://localhost:8888/$1 [P,QSA,L]</pre></div>
+</div>
+<p>
+I then restarted Apache and had a fully functional Typo installation that delegates serving static files to Apache httpd and is run by a pack of mongrels in a pound.
+</p><p>
+Now, if only I could do this with the servers at work...
+</p>
+<div class="blogger-post-footer"><img class="posterous_download_image" src="https://blogger.googleusercontent.com/tracker/2472972155627143715-3534217535652821510?l=blog.fredjean.net" height="1" alt="" width="1" /></div>

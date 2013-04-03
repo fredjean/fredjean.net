@@ -1,0 +1,12 @@
+---
+layout: post
+title: Configuring Multiple Connection Pools with JRuby MemCache Client
+published: true
+---
+<p>The JRuby MemCache Client uses Greg Whalin's Java based MemCache client to connect to the servers that implement the MemCache protocol. This client uses a connection pool to connect to and communicate with the memcached servers.</p>
+<p>There is one pool by default. It is called "default". You do not need to specify a pool name if you only need one connection pool. This would happen if you only need to talk to a group of servers.</p>
+<p>This becomes a little more complicated if you need to communicate with multiple memcached server groups for different purposes. A great example would be using both memcached and Kestrel on the same cluster. This is the situation that we find ourselves under on Project Kenai.</p>
+<p>The solution is simple. You can pass a :pool_name parameter when you are building the configuration for the MemCache client:</p>
+<script src="http://gist.github.com/157876.js"></script>
+<p>This results in a separate connection pool being created and allows you to use the JRuby MemCache client to talk to both Kestrel and memcached servers.</p>
+<div class="blogger-post-footer"><img class="posterous_download_image" src="https://blogger.googleusercontent.com/tracker/2472972155627143715-6781020537682229070?l=blog.fredjean.net" height="1" alt="" width="1" /></div>

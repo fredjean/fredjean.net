@@ -1,0 +1,17 @@
+---
+layout: post
+title: Better Living through Multicast DNS
+published: true
+---
+<p>
+Parallels is a very nice way to run more than one operating system at once on any Intel based Mac. You do need a fair amount of memory to be able to run it comfortably. Still, going to an after-market retailer for the extra memory is well worth the investment. This is especially true for web developers who have to test against multiple versions of multiple browsers. Or simply the bane of my existence: Internet Explorer.
+</p><p>
+I have a couple of virtual machines that run Windows XP Professional. One has IE6 installed while the other has IE7. This helps ensure that my markup, JavaScript and styling does work for the browsers that we are targeting. Apparently, our target users haven't converted to Mac OS X or at least upgraded to Firefox. It's a shame really...
+</p><p>
+A nice thing with Parallels is that the host computer has a relatively stable address that is accessible to the guests OS. You still have to figure out what it is though. It's not really hard, but I would rather remember a name than an IP address. 
+</p><p>
+Apple's Bonjour networking helps a lot. It uses a technique called Multicast DNS (mDNS) to resolve host names that aren't defined in a formal DNS server. You don't even need a DHCP server to get this to work. All Macs have a name. My MacBook Pro is called Defiant. mDNS host names lives in the .local top level domain. So, to get to the HTTP web server on Defiant, I can point my browser to <a href="http://defiant.local/">http://defiant.local/</a> and get a web page. 
+</p><p>
+Microsoft doesn't quite support mDNS. Well, they don't support Apple's implementation of mDNS to be precise. Apple does provide a <a href="http://www.apple.com/support/downloads/bonjourforwindows.html">download of Bonjour for Windows</a> which fills that gap. Installing it is as easy as downloading the file and running an installation wizard. You don't even have to reboot (which is a rarity under Windows). At that point, I am also able to open up IE in a virtual machine and point it to <a href="http://defiant.local/">http://defiant.local/</a> to retrieve the same web page. No more guessing at IP addresses for me.
+</p>
+<div class="blogger-post-footer"><img class="posterous_download_image" src="https://blogger.googleusercontent.com/tracker/2472972155627143715-6056114878163173646?l=blog.fredjean.net" height="1" alt="" width="1" /></div>

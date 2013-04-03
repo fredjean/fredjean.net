@@ -81,7 +81,7 @@ set :markdown,  :fenced_code_blocks => true,
 activate :blog do |blog|
   blog.prefix = ""
   blog.permalink = ":title"
-  blog.layout = blog
+  blog.layout = 'layout'
   blog.default_extension = ".markdown"
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
@@ -98,5 +98,5 @@ activate :s3_sync do |sync|
   sync.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
   sync.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
   sync.delete = true
-  sync.after_build = false
+  sync.after_build = true
 end

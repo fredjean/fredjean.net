@@ -4,12 +4,12 @@
 
 # Susy grids in Compass
 # First: gem install susy
-# require 'susy'
+require 'susy'
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+  config.output_style = :compact
+end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -89,8 +89,8 @@ end
 
 page "/feed.xml", :layout => false
 
-
 activate :directory_indexes
+activate :asset_hash
 
 activate :s3_sync do |sync|
   sync.bucket = 'fredjean.net'
@@ -98,5 +98,5 @@ activate :s3_sync do |sync|
   sync.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
   sync.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
   sync.delete = true
-  sync.after_build = true
+  sync.after_build = false
 end

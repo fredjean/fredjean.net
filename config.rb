@@ -15,6 +15,8 @@ end
 # Page options, layouts, aliases and proxies
 ###
 
+Time.zone = 'America/Denver'
+
 # Per-page layout changes:
 #
 # With no layout

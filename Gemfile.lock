@@ -100,6 +100,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rb-fsevent (0.9.3)
+    redcarpet (2.2.2)
     ruby-hmac (0.4.0)
     sass (3.2.7)
     sinatra (1.3.6)
@@ -128,6 +129,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  middleman
+  middleman (~> 3.0.13)
   middleman-blog
   middleman-s3_sync
+  redcarpet

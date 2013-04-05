@@ -8,12 +8,6 @@ body {
 .page {
   @include container;
 
-  footer {
-    clear: both;
-    .recent { @include span-columns(6, 12); }
-    .by_year { @include span-columns(6 omega, 12); }
-  }
-
   nav {
     @include span-columns(3, 12);
 
@@ -41,6 +35,12 @@ body {
         font-size: 12px;
       }
     }
+
+    footer {
+      .recent { @include span-columns(6, 9); }
+      .by_year { @include span-columns(3 omega, 9); }
+    }
+
   }
 
 

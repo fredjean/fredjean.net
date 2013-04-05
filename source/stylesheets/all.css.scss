@@ -1,0 +1,49 @@
+@charset "utf-8";
+@import 'susy';
+
+body {
+  font-family: sans-serif;
+}
+
+.page {
+  @include container;
+
+  footer {
+    clear: both;
+    .recent { @include span-columns(6, 12); }
+    .by_year { @include span-columns(6 omega, 12); }
+  }
+
+  nav {
+    @include span-columns(3, 12);
+
+    text-align: center;
+
+    blockquote {
+      font-style: italic;
+      /*font-size: 12px;*/
+      margin: 5px;
+    }
+
+    padding-top: 25px;
+    top: 0;
+  }
+
+  .content {
+    @include span-columns(9 omega, 12);
+
+    article {
+      border-bottom: 1px solid #ccc;
+      h2 {
+        -webkit-margin-after: 0em;
+      }
+      .date {
+        font-size: 12px;
+      }
+    }
+  }
+
+
+}
+
+

@@ -83,6 +83,7 @@ set :markdown,  :fenced_code_blocks => true,
 activate :blog do |blog|
   blog.prefix = ""
   blog.permalink = ":title"
+  blog.paginate = true
   blog.layout = 'layout'
   blog.default_extension = ".markdown"
   blog.tag_template = "tag.html"

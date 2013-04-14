@@ -61,6 +61,11 @@ nav {
 
     h2 {
       -webkit-margin-after: 0em;
+      a {
+        text-decoration: none;
+        text-shadow: 0px 1px 0pt rgba(255,255,255, 0.70);
+        color: #000;
+      }
     }
 
     .date {

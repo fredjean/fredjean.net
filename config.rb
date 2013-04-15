@@ -84,7 +84,7 @@ activate :blog do |blog|
   blog.prefix = ""
   blog.permalink = ":title"
   blog.paginate = true
-  blog.layout = 'layout'
+  blog.layout = 'post'
   blog.default_extension = ".markdown"
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"

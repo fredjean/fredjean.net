@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import 'normalize';
 @import 'susy';
 
 body {
@@ -63,7 +64,7 @@ nav {
     border-bottom: 1px solid #ccc;
     margin-bottom: 19px;
 
-    font: 14px Arial,Helvetica,sans-serif;
+    font-size: 14px;
     line-height: 125%;
 
     h2 {

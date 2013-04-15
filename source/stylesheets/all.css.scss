@@ -111,18 +111,22 @@ nav {
 footer {
   @include container;
   @include pre(3);
-  z-index: 99;
   border-top: 1px solid #ccc;
   background-color: white;
   line-height: 125%;
   height: 100%;
   font-size: 14px;
   display: block;
+  position: relative;
+  z-index: 99;
+
   .recent {
     @include span-columns(6, 9);
+    z-index: 99;
   }
   .by_year {
     @include span-columns(3 omega, 9);
+    z-index: 99;
   }
 }
 

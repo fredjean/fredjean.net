@@ -60,12 +60,16 @@ nav {
     line-height: 125%;
 
     h2 {
-      -webkit-margin-after: 0em;
+      -webkit-margin-after: 0.2em;
       a {
         text-decoration: none;
         text-shadow: 0px 1px 0pt rgba(255,255,255, 0.70);
         color: #000;
       }
+    }
+
+    ol li, ul li {
+      padding-bottom: .5em;
     }
 
     .date {

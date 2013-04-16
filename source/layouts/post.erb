@@ -1,7 +1,7 @@
 <% wrap_layout :layout do %>
   <article>
     <h2><%= current_page.data.title %></h2>
-    <span class="date"><%= current_article.date.strftime('%b %e, %Y') %></span>
+    <div> <span class="date"><%= current_article.date.strftime('%b %e, %Y') %></span> | <span class="author"><a rel="author" href="https://plus.google.com/u/1/110971367658599641980?rel=author">Frederic Jean</a></span></div>
     <%= yield %>
   </article>
   <aside>

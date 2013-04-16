@@ -1,4 +1,11 @@
+---
 language: ruby
 rvm:
-  - 1.9.3
+- 1.9.3
+env:
+  global:
+  - secure: ! 'kMq8q1SIa3yxS/rlBx8g01XHL9MKEOb7gR0CQQ43WR8JFm0jCw90Ez+SBSki
 
+      sWIAPcVRfUW0tg/7zEmbL2/fcCsVIgpmojaqzzzIWf7uhkBct8ac9xYidMZb
+
+      5/wStBI9bX/wCb1BtkvF2SMvagnHh0C/3qkjFTATXp7nxs6GYG8='

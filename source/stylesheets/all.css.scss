@@ -105,6 +105,12 @@ nav {
     .date, .author {
       font-size: 12px;
     }
+
+    .author {
+      img {
+        vertical-align: middle;
+      }
+    }
   }
 }
 

@@ -12,7 +12,7 @@ per_page: 10
 <% page_articles.each_with_index do |article, i| %>
   <article>
     <h2><%= link_to article.title, article, anchor: 'disqus_tread' %></h2>
-    <div> <span class="date"><%= article.date.strftime('%b %e, %Y') %></span> | <span class="author"><a rel="author" href="https://plus.google.com/u/1/110971367658599641980?rel=author">Frederic Jean</a></span></div>
+    <div><span class="author"><a rel="author" href="https://plus.google.com/u/1/110971367658599641980?rel=author">Frederic Jean</a></span> | <span class="date"><%= article.date.strftime('%b %e, %Y') %></span></div>
     <% if i == 0 && page_number == 1 %>
       <%= article.body %>
     <% else %>

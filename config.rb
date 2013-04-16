@@ -38,6 +38,17 @@ Time.zone = 'America/Denver'
 ###
 # Helpers
 ###
+helpers do
+  def title
+    if current_page.url == '/'
+      "Out of my mind..."
+    elsif title = current_page.data.title
+      "#{title} | Out of my mind..."
+    else
+      "Out of my mind..."
+    end
+  end
+end
 
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes

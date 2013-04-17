@@ -43,7 +43,7 @@ configured to expose it's content as a web site. I then used
 [fredjean.net](http://fredjean.net) to the bucket.
 
 The end result is a blogging environment that I control, built and
-managed using tools that are familiar to me as a developer and leverages
+manage using tools that are familiar to me as a developer and leverages
 cloud computing technologies.
 
 Many thanks to [dojo4](http://dojo4.com) for allowing me to work on

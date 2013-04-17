@@ -1,7 +1,7 @@
 ---
 title: Relaunching My Blog
 date: 2013-04-15 14:37 MDT
-tags: middleman, blog
+tags: middleman, blog, dojo4
 ---
 
 I have left my blog dormant for about 3 years now. There aren't good

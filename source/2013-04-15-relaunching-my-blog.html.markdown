@@ -42,7 +42,7 @@ configured to expose it's content as a web site. I then used
 [DNSimple.com](http://dnsimple.com) to point
 [fredjean.net](http://fredjean.net) to the bucket.
 
-The end result is a blogging environment that I control, built and
+The end result is a blogging environment that I control, build and
 manage using tools that are familiar to me as a developer and leverages
 cloud computing technologies.
 

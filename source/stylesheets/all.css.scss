@@ -130,11 +130,9 @@ footer {
 
   .recent {
     @include span-columns(6, 9);
-    z-index: 99;
   }
   .by_year {
     @include span-columns(3 omega, 9);
-    z-index: 99;
   }
 }
 

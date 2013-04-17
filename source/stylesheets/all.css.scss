@@ -83,13 +83,16 @@ nav {
 
   article {
     border-bottom: 1px solid #ccc;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.0em;
+    padding-bottom: 1.0em;
 
     font-size: 14px;
     line-height: 125%;
 
     h2 {
       -webkit-margin-after: 0.2em;
+      line-height: 125%;
+
       a {
         text-decoration: none;
         text-shadow: 0px 1px 0pt rgba(255,255,255, 0.70);

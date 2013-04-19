@@ -1,5 +1,5 @@
 ---
-title: Go Static, Young Man!
+title: Go Static Young Man!
 date: 2013-04-19 16:35 MDT
 tags:
 ---

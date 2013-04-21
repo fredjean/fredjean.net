@@ -27,7 +27,7 @@ nav {
 
     padding: 1.0em;
     text-align: center;
-    font-size: 13px;
+    font-size: 11pt;
 
     blockquote {
       font-style: italic;
@@ -86,11 +86,12 @@ nav {
     margin-bottom: 1.0em;
     padding-bottom: 1.0em;
 
-    font-size: 14px;
-    line-height: 125%;
+    font-size: 14pt;
+    line-height: 150%;
 
     h1 {
       -webkit-margin-after: 0.2em;
+      font-weight: bold;
       line-height: 125%;
 
       a {
@@ -104,8 +105,8 @@ nav {
       padding-bottom: .5em;
     }
 
-    .date, .author {
-      font-size: 12px;
+    .byline {
+      font-size: 12pt;
     }
 
     .author {

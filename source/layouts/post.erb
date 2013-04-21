@@ -1,8 +1,8 @@
 <% wrap_layout :layout do %>
   <article>
     <h1><%= current_page.data.title %></h1>
-    <%= partial :byline, locals: { article: current_article } %>
     <%= yield %>
+    <%= partial :byline, locals: { article: current_article } %>
   </article>
   <aside>
     <div id="disqus_thread"></div>

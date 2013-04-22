@@ -15,3 +15,4 @@ gem "redcarpet"
 # Experimental...
 gem 'travis'
 gem 'rake'
+gem 'auto_excerpt'

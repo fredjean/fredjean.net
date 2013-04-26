@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 631f482aa968c1f5635e2b3c4ba20b61ad9d055f
+  revision: 4532e0d501614d9592541fd9c29f91d5cbf3fba2
   specs:
     middleman-s3_sync (3.0.10)
       fog
@@ -67,7 +67,7 @@ GEM
     launchy (2.2.0)
       addressable (~> 2.3)
     listen (0.7.3)
-    map (6.4.2)
+    map (6.5.0)
     maruku (0.6.1)
       syntax (>= 1.0.0)
     method_source (0.8.1)

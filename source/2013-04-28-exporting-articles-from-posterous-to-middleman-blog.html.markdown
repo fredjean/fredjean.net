@@ -1,6 +1,7 @@
 ---
 title: Exporting Articles from Posterous to Middleman Blog
 date: 2013-04-28 09:52 MDT
+published: true
 tags:
 ---
 
@@ -15,14 +16,14 @@ exporters, including one for [Posterous](https://github.com/mojombo/jekyll/wiki/
 
 The first step was to install Jekyll:
 
-```shell
+```bash
 gem install jekyll
 ```
 
 And then export my content:
 
 
-```shell
+```bash
 ruby -rubygems -e 'require "jekyll/migrators/posterous"; Jekyll::Posterous.process("fred@fredjean.net", "NotMyPassword", "NotMyKey")'
 ```
 

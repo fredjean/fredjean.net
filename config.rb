@@ -114,3 +114,6 @@ activate :s3_sync do |sync|
   sync.delete = true
   sync.after_build = false
 end
+
+activate :syntax
+

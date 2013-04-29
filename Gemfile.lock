@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/fredjean/middleman-s3_sync.git
+  revision: 7a530424e0becbc6faffa6214225d96f89099add
+  specs:
+    middleman-s3_sync (3.0.10)
+      fog
+      map
+      middleman-core (>= 3.0.0)
+      pmap
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -90,11 +100,6 @@ GEM
       padrino-helpers (= 0.10.7)
       sass (>= 3.1.20)
       uglifier (~> 1.2.6)
-    middleman-s3_sync (3.0.10)
-      fog
-      map
-      middleman-core (>= 3.0.0)
-      parallel
     middleman-smusher (3.0.0)
       middleman (>= 3.0.0)
       smusher (~> 0.4.9)
@@ -124,7 +129,7 @@ GEM
     padrino-helpers (0.10.7)
       i18n (~> 0.6)
       padrino-core (= 0.10.7)
-    parallel (0.6.4)
+    pmap (1.0.0)
     posix-spawn (0.3.6)
     pry (0.9.12)
       coderay (~> 1.0.5)
@@ -192,7 +197,7 @@ DEPENDENCIES
   builder (~> 3.0.0)
   middleman (~> 3.0.13)
   middleman-blog (~> 3.2.0)
-  middleman-s3_sync
+  middleman-s3_sync!
   middleman-smusher
   middleman-syntax
   rake

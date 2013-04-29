@@ -1,12 +1,13 @@
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 7a530424e0becbc6faffa6214225d96f89099add
+  revision: 91c587ab748bbf256cdd357d4f1d0488c8b9edf8
   specs:
-    middleman-s3_sync (3.0.10)
+    middleman-s3_sync (3.0.11)
       fog
       map
       middleman-core (>= 3.0.0)
       pmap
+      ruby-progressbar
 
 GEM
   remote: https://rubygems.org/
@@ -147,6 +148,7 @@ GEM
     rb-fsevent (0.9.3)
     redcarpet (2.2.2)
     ruby-hmac (0.4.0)
+    ruby-progressbar (1.0.2)
     sass (3.2.7)
     sinatra (1.3.6)
       rack (~> 1.4)

@@ -116,8 +116,5 @@ activate :s3_sync do |sync|
   sync.after_build = false
 end
 
-activate :syntax,
-  :linenos => 'inline',
-  :lineanchors => 'L',
-  :anchorlinenos => true
+activate :rouge_syntax
 

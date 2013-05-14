@@ -1,8 +1,9 @@
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 8d5ac35af09d05732b2fbca5b0735e1a3e17eb26
+  revision: 7546a951078f329a2a3d2d67f7fa44feab7c3a69
   specs:
     middleman-s3_sync (3.0.11)
+      colorize
       fog
       map
       middleman-core (>= 3.0.0)
@@ -29,6 +30,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    colorize (0.5.8)
     compass (0.12.2)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -128,7 +130,7 @@ GEM
     multipart-post (1.2.0)
     net-http-persistent (2.8)
     net-http-pipeline (1.0.1)
-    net-scp (1.1.0)
+    net-scp (1.1.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.6.7)
     netrc (0.7.7)

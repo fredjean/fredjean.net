@@ -114,7 +114,8 @@ activate :s3_sync do |sync|
   sync.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
   sync.delete = true
   sync.after_build = false
+  sync.prefer_gzip = true
 end
 
 activate :rouge_syntax
-
+activate :gzip

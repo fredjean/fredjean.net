@@ -85,6 +85,7 @@ configure :build do
   require "middleman-smusher"
   activate :smusher
   activate :minify_html
+  activate :gzip
 end
 
 set :markdown_engine, :redcarpet
@@ -118,4 +119,3 @@ activate :s3_sync do |sync|
 end
 
 activate :rouge_syntax
-activate :gzip

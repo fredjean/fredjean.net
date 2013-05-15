@@ -1,4 +1,5 @@
 task :build do
+  puts "Using #{ENV['LANG']} encoding..."
   system 'middleman build'
 end
 

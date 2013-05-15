@@ -62,7 +62,7 @@
         <div class="recent">
           <h2>Recent Articles</h2>
           <ol>
-            <% blog.articles.sort { |a,b| b.date <=> a.date || a.title <=> b.title }[0...10].each do |article| %>
+            <% blog.articles.sort { |a,b| (b.date <=> a.date) != 0 ?  b.date <=> a.date : a.title <=> b.title }[0...10].each do |article| %>
               <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
           <% end %>
           </ol>

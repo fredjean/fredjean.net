@@ -84,7 +84,7 @@ configure :build do
   # First: gem install middleman-smusher
   require "middleman-smusher"
   activate :smusher
-  #activate :minify_html
+  activate :minify_html
 end
 
 set :markdown_engine, :redcarpet

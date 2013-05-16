@@ -25,7 +25,7 @@ This worked great for a while. I was able to reduce the impact of
 pushing content to a web site, which made [dojo4's](http://dojo4.com)
 frontend developers quite happy.
 
-Another goal of the middleman-s3-sync gem is that an otherewise
+Another goal of the middleman-s3-sync gem is that an otherwise
 identical resource built on different systems should be recognized as
 being identical and not pushed to S3 if it was up to date (the digests
 matched).

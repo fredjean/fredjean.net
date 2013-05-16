@@ -21,7 +21,7 @@ pageable: true
 <% end %>
 
 <ul>
-  <% page_articles.each_with_index do |article, i| %>
+  <% page_articles.sort { |a, b| (a.date <=> b.date) != 0 ?  a.date <=> b.date : a.title <=> b.title }.each_with_index do |article, i| %>
     <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
   <% end %>
 </ul>

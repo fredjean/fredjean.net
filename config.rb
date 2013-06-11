@@ -111,11 +111,6 @@ activate :asset_hash
 activate :s3_sync do |sync|
   sync.bucket = 'fredjean.net'
   sync.region = 'us-east-1'
-  sync.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
-  sync.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
-  sync.delete = true
-  sync.after_build = false
-  sync.prefer_gzip = true
 end
 
 activate :rouge_syntax

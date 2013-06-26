@@ -1,8 +1,10 @@
 ---
+published: true
 title: Toward Idempotency
-date: 2013-05-16 11:31 MDT
-tags:
+date: "2013-05-16 11:31 MDT"
+tags: null
 ---
+
 <blockquote>
 <dl>
 <dt>Idempotent</dt>

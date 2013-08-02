@@ -62,6 +62,9 @@ GEM
       tilt
     highline (1.6.19)
     hike (1.2.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     httpclient (2.3.3)
     i18n (0.6.4)
     json (1.8.0)
@@ -118,6 +121,7 @@ GEM
       sprockets-sass (~> 1.0.0)
     mime-types (1.23)
     multi_json (1.7.7)
+    multi_xml (0.5.4)
     multipart-post (1.2.0)
     net-http-persistent (2.8)
     net-http-pipeline (1.0.1)
@@ -188,6 +192,7 @@ PLATFORMS
 DEPENDENCIES
   auto_excerpt
   builder (~> 3.0.0)
+  httparty
   middleman (~> 3.1.0)
   middleman-blog
   middleman-minify-html

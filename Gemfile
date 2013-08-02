@@ -13,6 +13,7 @@ gem "builder", "~> 3.0.0"
 
 gem "susy"
 gem "redcarpet"
+gem "httparty"
 
 # Using Travis to build and post the blog when the repo changes.
 # Experimental...

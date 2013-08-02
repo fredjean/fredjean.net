@@ -37,6 +37,7 @@ Time.zone = 'America/Denver'
 
 ###
 # Helpers
+
 ###
 helpers do
   def title
@@ -49,6 +50,9 @@ helpers do
     end
   end
 end
+
+require 'lib/tweet_helpers'
+helpers TweetHelpers
 
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes

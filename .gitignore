@@ -15,3 +15,6 @@
 
 # Ignore rbenv local config
 /.ruby-version
+
+# Ingore S3 config
+.s3_sync

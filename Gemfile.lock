@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: d1cd91ab80bf2ee8b1c461ba807e23640efe22ca
+  revision: 49683cc5aa215353aff86af76dc0acb6d57d5a09
   branch: master
   specs:
     middleman-s3_sync (3.0.14)

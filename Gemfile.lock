@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 5c60e1585306dce3f0ec7f87847c7a66c06daf58
+  revision: 6dc55877718f3d53d6ec6810a153c5be6f3725d2
   branch: master
   specs:
     middleman-s3_sync (3.0.14)
@@ -40,7 +40,7 @@ GEM
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
     ffi (1.9.0)
-    fog (1.14.0)
+    fog (1.15.0)
       builder
       excon (~> 0.25.0)
       formatador (~> 0.2.0)
@@ -120,7 +120,7 @@ GEM
       sprockets (~> 2.1)
       sprockets-helpers (~> 1.0.0)
       sprockets-sass (~> 1.0.0)
-    mime-types (1.23)
+    mime-types (1.24)
     mini_portile (0.5.1)
     multi_json (1.7.9)
     multi_xml (0.5.4)

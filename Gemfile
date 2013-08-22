@@ -4,7 +4,7 @@ gem "middleman", "~> 3.1.0"
 gem "middleman-blog"
 gem "middleman-smusher"
 gem "middleman-rouge"
-gem "middleman-s3_sync", :git => "https://github.com/fredjean/middleman-s3_sync.git"
+gem "middleman-s3_sync", :git => "https://github.com/fredjean/middleman-s3_sync.git", :branch => :master
 # gem "middleman-s3_sync", :path => '~/dev/middleman-s3_sync'
 gem "middleman-minify-html"
 

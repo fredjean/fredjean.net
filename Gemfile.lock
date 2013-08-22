@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
   revision: 5c60e1585306dce3f0ec7f87847c7a66c06daf58
+  branch: master
   specs:
     middleman-s3_sync (3.0.14)
       colorize

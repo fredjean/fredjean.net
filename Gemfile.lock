@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 49683cc5aa215353aff86af76dc0acb6d57d5a09
+  revision: a7a07704fc416c0aff288c9e0bf1b0820561a3ba
   branch: master
   specs:
-    middleman-s3_sync (3.0.14)
+    middleman-s3_sync (3.0.16)
       colorize
       fog
       map
@@ -120,7 +120,7 @@ GEM
       sprockets (~> 2.1)
       sprockets-helpers (~> 1.0.0)
       sprockets-sass (~> 1.0.0)
-    mime-types (1.24)
+    mime-types (1.25)
     mini_portile (0.5.1)
     multi_json (1.7.9)
     multi_xml (0.5.4)

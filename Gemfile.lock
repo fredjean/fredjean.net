@@ -1,15 +1,16 @@
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 5154856e12de686c53dc07c97b5b47f129cbfd47
+  revision: fcd0d501bc7b91b12f8df2ee81baabb41ce91d65
   branch: master
   specs:
-    middleman-s3_sync (3.0.18)
+    middleman-s3_sync (3.0.19)
       colorize
       fog (>= 1.10.1)
       map
       middleman-core (>= 3.0.0)
       pmap
       ruby-progressbar
+      unf
 
 GEM
   remote: https://rubygems.org/
@@ -35,17 +36,17 @@ GEM
     ethon (0.6.1)
       ffi (>= 1.3.0)
       mime-types (~> 1.18)
-    excon (0.27.6)
+    excon (0.28.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
-    ffi (1.9.0)
-    fog (1.16.0)
+    ffi (1.9.3)
+    fog (1.18.0)
       builder
-      excon (~> 0.27.0)
+      excon (~> 0.28.0)
       formatador (~> 0.2.0)
       mime-types
       multi_json (~> 1.0)
@@ -53,7 +54,6 @@ GEM
       net-ssh (>= 2.1.3)
       nokogiri (~> 1.5)
       ruby-hmac
-      unicode (~> 0.4.4)
     formatador (0.2.4)
     fssm (0.2.10)
     gh (0.13.0)
@@ -197,7 +197,9 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    unicode (0.4.4)
+    unf (0.1.3)
+      unf_ext
+    unf_ext (0.0.6)
     websocket (1.0.7)
 
 PLATFORMS

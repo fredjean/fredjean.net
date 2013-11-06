@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: fcd0d501bc7b91b12f8df2ee81baabb41ce91d65
+  revision: fc678126f729443b93c205b9b3ecae11e6ea9d6c
   branch: master
   specs:
-    middleman-s3_sync (3.0.19)
+    middleman-s3_sync (3.0.20)
       colorize
       fog (>= 1.10.1)
       map

@@ -117,6 +117,7 @@ activate :asset_hash
 activate :s3_sync do |sync|
   sync.bucket = 'fredjean.net'
   sync.region = 'us-east-1'
+  sync.prefer_gzip = true
 end
 
 activate :rouge_syntax

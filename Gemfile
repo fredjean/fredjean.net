@@ -16,6 +16,6 @@ gem "httparty"
 
 # Using Travis to build and post the blog when the repo changes.
 # Experimental...
-gem 'travis', '~> 1.5.0'
+gem 'travis', '~> 1.6.0'
 gem 'rake'
 gem 'auto_excerpt'

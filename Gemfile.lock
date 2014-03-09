@@ -3,7 +3,7 @@ GIT
   revision: 3294ce71e9023cce9c2381cccf37307c369cd634
   branch: master
   specs:
-    middleman-s3_sync (3.0.24)
+    middleman-s3_sync (3.0.25)
       colorize
       fog (>= 1.10.1)
       map
@@ -114,7 +114,7 @@ GEM
     middleman-smusher (3.0.0)
       middleman (>= 3.0.0)
       smusher (~> 0.4.9)
-    middleman-sprockets (3.3.0)
+    middleman-sprockets (3.3.1)
       middleman-core (>= 3.2)
       sprockets (~> 2.1)
       sprockets-helpers (~> 1.0.0)

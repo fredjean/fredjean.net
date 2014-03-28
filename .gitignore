@@ -13,6 +13,9 @@
 # Ignore Sass' cache
 /.sass-cache
 
+# Ignore cache in general...
+/.cache
+
 # Ignore rbenv local config
 /.ruby-version
 

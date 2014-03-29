@@ -26,7 +26,6 @@ nav {
   .nav-inner {
     @include span-columns(3);
 
-    padding: 1.0em;
     margin-right: 0;
     text-align: center;
     font-size: 11pt;

@@ -1,0 +1,32 @@
+---
+title: Running Docker under Linux Mint 16
+date: 2014-03-29 14:37 MDT
+tags:
+---
+
+<%= tweet(450015663306715137) %>
+
+It took a few months, but I finally received the [Dell Precision M3800](http://www.dell.com/us/business/p/precision-m3800-workstation/pd?ST=dell%20m3800&dgc=ST&cid=263753&lid=5054926&acd=12309152537461010) that I
+ordered as a work laptop. It was certainly worth the wait though. It is
+fast and sleek and is turning out to be a great alternative to the
+current batch of Macbook Pros.
+
+My first action after receiving it was to replace Windows with Linux
+Mint. I picked Linux Mint due to it's Cinnamon desktop, which I do
+prefer over Ubuntu's Unity, and it's compatibility with Ubuntu. The
+installation was straightforward and I was able to use the computer
+right away with none of the difficulties that I experienced installing
+Ubuntu on my Macbook Pro.
+
+I did have a couple challenges getting Docker to work on the new
+installation. I first tried to follow the [Ubuntu installation
+instructions](http://docs.docker.io/en/latest/installation/ubuntulinux/)
+to get it to work. It looked good, so I tried to build an image. It kept
+failing with a "no such file or directory" error message. I then tried
+to run the base image with no success.
+
+It turns out that the ```cgroup-lite``` and the ```lxc``` packages are
+[not installed by default on Linux Mint](https://github.com/dotcloud/docker/issues/4578). Installing both then allowed me to run bash
+in the base image and then build and run my image.
+
+

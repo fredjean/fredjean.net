@@ -70,7 +70,7 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
-page '/404.html', directory_index: false
+page '/404.html'
 
 # Build-specific configuration
 configure :build do
@@ -111,7 +111,7 @@ end
 
 page "/feed.xml", :layout => false
 
-activate :directory_indexes
+# activate :directory_indexes
 activate :asset_hash
 
 activate :s3_sync do |sync|

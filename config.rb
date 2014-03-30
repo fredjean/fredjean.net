@@ -120,4 +120,17 @@ activate :s3_sync do |sync|
   sync.prefer_gzip = true
 end
 
+activate :s3_redirect do |redirect|
+  redirect.bucket = 'fredjean.net'
+  redirect.region = 'us-east-1'
+  redirect.after_build = false
+end
+
+ready do
+  sitemap.resources.each do |resource|
+    redirect resource.url + "/", resource.url
+    redirect resource.url + "/index.html", resource.url
+  end
+end
+
 activate :rouge_syntax

@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/fredjean/middleman-s3_redirect
+  revision: 5e2c821603f36e465f6e390c296ff14e99dcdd55
+  branch: master
+  specs:
+    middleman-s3_redirect (3.0.3)
+      fog (>= 1.10.1)
+      middleman-core (>= 3.0.0)
+      parallel
+
+GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
   revision: acc99a4200f6a41a082801dfacb29b6c29d24ef4
   branch: master
@@ -138,6 +148,7 @@ GEM
     net-ssh (2.8.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    parallel (1.0.0)
     pmap (1.0.1)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -214,6 +225,7 @@ DEPENDENCIES
   middleman-blog
   middleman-minify-html
   middleman-rouge
+  middleman-s3_redirect!
   middleman-s3_sync!
   middleman-smusher
   rake

@@ -118,6 +118,7 @@ activate :s3_sync do |sync|
   sync.bucket = 'fredjean.net'
   sync.region = 'us-east-1'
   sync.prefer_gzip = true
+  sync.version_bucket = true
 end
 
 activate :s3_redirect do |redirect|

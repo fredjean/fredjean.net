@@ -129,7 +129,7 @@ end
 
 ready do
   sitemap.resources.each do |resource|
-    redirect resource.url + "/", resource.url
+    next if resource.url =~ /\.html$/
     redirect resource.url + "/index.html", resource.url
   end
 end

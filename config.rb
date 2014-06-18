@@ -109,6 +109,10 @@ activate :blog do |blog|
   blog.calendar_template = "calendar.html"
 end
 
+activate :directory_indexes
+
+set :relative_links, true
+
 page "/feed.xml", :layout => false
 
 # activate :directory_indexes
@@ -125,13 +129,6 @@ activate :s3_redirect do |redirect|
   redirect.bucket = 'fredjean.net'
   redirect.region = 'us-east-1'
   redirect.after_build = false
-end
-
-ready do
-  sitemap.resources.each do |resource|
-    next if resource.url =~ /\.html$/
-    redirect resource.url + "/index.html", resource.url
-  end
 end
 
 activate :rouge_syntax

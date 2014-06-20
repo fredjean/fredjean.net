@@ -10,10 +10,10 @@ GIT
 
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: e7f7577176e2e902e8dc0b6ea49c594836af56a0
+  revision: 0fdef4750c66e0b20d47757c4abeab502c61afb8
   branch: master
   specs:
-    middleman-s3_sync (3.0.29)
+    middleman-s3_sync (3.0.30)
       colorize
       fog (>= 1.10.1)
       map
@@ -99,7 +99,7 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
-    map (6.5.3)
+    map (6.5.4)
     method_source (0.8.2)
     middleman (3.2.2)
       coffee-script (~> 2.2.0)

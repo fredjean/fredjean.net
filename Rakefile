@@ -7,4 +7,8 @@ task :sync do
   system 'middleman s3_sync'
 end
 
-task default: [:build, :sync]
+task :invalidate do
+  system 'middleman invalidate'
+end
+
+task default: [:build, :sync, :invalidate]

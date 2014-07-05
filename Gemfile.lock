@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 0fdef4750c66e0b20d47757c4abeab502c61afb8
+  revision: c419eb73c9c08aa56d63e9b0445a4e0c74c24bf7
   branch: master
   specs:
     middleman-s3_sync (3.0.30)
@@ -25,7 +25,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (3.2.18)
+    activesupport (3.2.19)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     addressable (2.3.6)
@@ -59,9 +59,10 @@ GEM
       fog-json
       ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
-    fog-brightbox (0.0.2)
-      fog-core
+    fog-brightbox (0.1.1)
+      fog-core (~> 1.22)
       fog-json
+      inflecto
     fog-core (1.22.0)
       builder
       excon (~> 0.33)
@@ -90,6 +91,7 @@ GEM
       multi_xml (>= 0.5.2)
     httpclient (2.4.0)
     i18n (0.6.9)
+    inflecto (0.0.2)
     ipaddress (0.8.0)
     json (1.8.1)
     kramdown (1.3.3)
@@ -115,6 +117,9 @@ GEM
       addressable (~> 2.3.5)
       middleman-core (~> 3.2)
       tzinfo (>= 0.3.0)
+    middleman-cloudfront (0.0.9)
+      fog (~> 1.9)
+      middleman-core (~> 3.0)
     middleman-core (3.2.2)
       activesupport (~> 3.2.6)
       bundler (~> 1.1)
@@ -226,6 +231,7 @@ DEPENDENCIES
   httparty
   middleman (~> 3.2.0)
   middleman-blog
+  middleman-cloudfront
   middleman-minify-html
   middleman-rouge
   middleman-s3_redirect!

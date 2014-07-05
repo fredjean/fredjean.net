@@ -110,13 +110,10 @@ activate :blog do |blog|
 end
 
 activate :directory_indexes
-
+activate :asset_hash
 set :relative_links, true
 
 page "/feed.xml", :layout => false
-
-# activate :directory_indexes
-activate :asset_hash
 
 activate :s3_sync do |sync|
   sync.bucket = 'fredjean.net'
@@ -131,4 +128,12 @@ activate :s3_redirect do |redirect|
   redirect.after_build = false
 end
 
+activate :cloudfront do |cf|
+  cf.access_key_id = ENV['AWS_ACCESS_KEY_ID']
+  cf.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+  cf.distribution_id = 'ERUO4ZK8VN1P2'
+  cf.filter = /\.html$/i
+end
+
 activate :rouge_syntax
+

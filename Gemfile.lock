@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: c419eb73c9c08aa56d63e9b0445a4e0c74c24bf7
+  revision: c119e9411d5d32fc809a646431d852a55b26e397
   branch: master
   specs:
     middleman-s3_sync (3.0.30)
@@ -37,15 +37,15 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.7.0)
+    coffee-script-source (1.7.1)
     colorize (0.7.3)
-    compass (0.12.6)
+    compass (0.12.7)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.2.19)
-    ethon (0.7.0)
+    ethon (0.7.1)
       ffi (>= 1.3.0)
-    excon (0.37.0)
+    excon (0.38.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.9.0)
@@ -53,25 +53,29 @@ GEM
     faraday_middleware (0.9.1)
       faraday (>= 0.7.4, < 0.10)
     ffi (1.9.3)
-    fog (1.22.1)
+    fog (1.23.0)
       fog-brightbox
-      fog-core (~> 1.22)
+      fog-core (~> 1.23)
       fog-json
+      fog-softlayer
       ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
     fog-brightbox (0.1.1)
       fog-core (~> 1.22)
       fog-json
       inflecto
-    fog-core (1.22.0)
+    fog-core (1.23.0)
       builder
-      excon (~> 0.33)
+      excon (~> 0.38)
       formatador (~> 0.2)
       mime-types
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
     fog-json (1.0.0)
       multi_json (~> 1.0)
+    fog-softlayer (0.3.11)
+      fog-core
+      fog-json
     formatador (0.2.5)
     fssm (0.2.10)
     gh (0.13.2)
@@ -90,11 +94,11 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     httpclient (2.4.0)
-    i18n (0.6.9)
+    i18n (0.6.11)
     inflecto (0.0.2)
     ipaddress (0.8.0)
     json (1.8.1)
-    kramdown (1.3.3)
+    kramdown (1.4.0)
     launchy (2.4.2)
       addressable (~> 2.3)
     listen (1.3.1)
@@ -154,9 +158,9 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    nokogiri (1.6.2.1)
+    nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
-    parallel (1.0.0)
+    parallel (1.1.2)
     pmap (1.0.1)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -175,10 +179,10 @@ GEM
     rb-kqueue (0.2.3)
       ffi (>= 0.5.0)
     redcarpet (3.1.2)
-    rouge (1.4.0)
+    rouge (1.6.1)
     ruby-progressbar (1.5.1)
     sass (3.2.19)
-    slop (3.5.0)
+    slop (3.6.0)
     smusher (0.4.9)
       httpclient (>= 2.2)
       json
@@ -199,7 +203,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    travis (1.6.12)
+    travis (1.6.17)
       addressable (~> 2.3)
       backports
       faraday (~> 0.9)
@@ -210,8 +214,8 @@ GEM
       pry (~> 0.9, < 0.10)
       pusher-client (~> 0.4)
       typhoeus (~> 0.6, >= 0.6.8)
-    typhoeus (0.6.8)
-      ethon (>= 0.7.0)
+    typhoeus (0.6.9)
+      ethon (>= 0.7.1)
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
     uglifier (2.4.0)
@@ -220,7 +224,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.6)
-    websocket (1.1.4)
+    websocket (1.2.0)
 
 PLATFORMS
   ruby

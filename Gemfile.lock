@@ -10,10 +10,10 @@ GIT
 
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: c119e9411d5d32fc809a646431d852a55b26e397
+  revision: 371c7ce433430bb2fb8ae3d026319b5402dc6ccd
   branch: master
   specs:
-    middleman-s3_sync (3.0.30)
+    middleman-s3_sync (3.0.31)
       colorize
       fog (>= 1.10.1)
       map
@@ -45,7 +45,7 @@ GEM
       sass (~> 3.2.19)
     ethon (0.7.1)
       ffi (>= 1.3.0)
-    excon (0.38.0)
+    excon (0.39.5)
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.9.0)
@@ -60,11 +60,11 @@ GEM
       fog-softlayer
       ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
-    fog-brightbox (0.1.1)
+    fog-brightbox (0.4.1)
       fog-core (~> 1.22)
       fog-json
       inflecto
-    fog-core (1.23.0)
+    fog-core (1.24.0)
       builder
       excon (~> 0.38)
       formatador (~> 0.2)
@@ -73,7 +73,7 @@ GEM
       net-ssh (>= 2.1.3)
     fog-json (1.0.0)
       multi_json (~> 1.0)
-    fog-softlayer (0.3.11)
+    fog-softlayer (0.3.16)
       fog-core
       fog-json
     formatador (0.2.5)

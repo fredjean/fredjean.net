@@ -21,3 +21,6 @@
 
 # Ingore S3 config
 .s3_sync
+
+# Ignore .rbenv-vars
+.rbenv-vars

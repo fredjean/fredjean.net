@@ -49,19 +49,34 @@ Document text field:
       "Resource": "arn:aws:s3:::fredjean.net/*"
     }
   ]
-  }
-  ```
+}
+```
 
-  Of course, replace ```fredjean.net``` with the name of your bucket.
-  Click on the "Next Step" button.
+Of course, replace ```fredjean.net``` with the name of your bucket.
+Click on the "Next Step" button.
 
-  Verify that the information listed on the Review page matches what you
-  entered and click on the "Create Group" button. This should send you
-  to the Groups page and you should see your new group.
+Verify that the information listed on the Review page matches what you
+entered and click on the "Create Group" button. This should send you
+to the Groups page and you should see your new group.
 
-  Click on the group name. This will give you the group details page.
-  Click on the "Add Users to Group" button. Select the user or users
-  that need the permissions to manage your bucket. Click on the Add
-  Users button.
+Click on the group name. This will give you the group details page.
+Click on the "Add Users to Group" button. Select the user or users
+that need the permissions to manage your bucket. Click on the Add
+Users button.
 
+Your user should now be all set to be able to manage the S3 bucket that
+hosts your content. Configure ```middleman-s3_sync``` with the
+credentials of your new user and attempt to sync. This can be done
+either via the ```.s3_sync``` configuration file or as an environment
+variable. The [middleman-s3_sync
+README](https://github.com/fredjean/middleman-s3_sync) has extensive
+documentation on how to do this.
+
+At this point, you should seriously consider deleting the access keys
+that you may have associated with your root account if you used them to
+publish content to a bucket.
+
+Finally, you can create different users and add them to the group if
+multiple people or systems are allowed to publish your website. This may
+be helpful if you have a CI server publishing your blog for example.
 

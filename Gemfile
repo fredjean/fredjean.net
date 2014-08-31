@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem "middleman", "~> 3.2.0"
 gem "middleman-blog"
 gem "middleman-smusher"
-gem "middleman-rouge"
+gem "middleman-syntax"
 gem "middleman-s3_sync", :git => "https://github.com/fredjean/middleman-s3_sync.git", :branch => :master
 gem "middleman-s3_redirect", :git => "https://github.com/fredjean/middleman-s3_redirect", :branch => :master
 gem "middleman-cloudfront"

@@ -135,5 +135,5 @@ activate :cloudfront do |cf|
   cf.filter = /\.html$/i
 end
 
-activate :rouge_syntax
+activate :syntax, line_numbers: true
 

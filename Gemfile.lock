@@ -10,10 +10,10 @@ GIT
 
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 371c7ce433430bb2fb8ae3d026319b5402dc6ccd
+  revision: 62a0bde081faf93cb8014ba7aac83b57b19e41d5
   branch: master
   specs:
-    middleman-s3_sync (3.0.31)
+    middleman-s3_sync (3.0.32)
       colorize
       fog (>= 1.10.1)
       map
@@ -60,7 +60,7 @@ GEM
       fog-softlayer
       ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
-    fog-brightbox (0.4.1)
+    fog-brightbox (0.5.0)
       fog-core (~> 1.22)
       fog-json
       inflecto

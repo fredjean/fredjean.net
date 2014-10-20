@@ -1,5 +1,5 @@
 ---
-title: PhantomJS and Poodles
+title: PhantomJS, Capybaras, and Poodles
 date: 2014-10-20 10:13 MDT
 tags: phantomjs,testing,poodle,ssl,paypal
 ---

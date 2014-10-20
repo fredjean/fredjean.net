@@ -5,7 +5,7 @@ tags: phantomjs,testing,poodle,ssl,paypal
 ---
 
 ![Poodle source:
-https://secure.flickr.com/photos/imagesbywestfall/3452788638/in/photolist-6g7rLA-5Ly2TJ-dhgp22-7Eq65g-4L9Gkr-4L9Gkv-5MgFuL-86RKEk-a2Vhpv-54pS7t-uKNEz-2yMbx-7KkzPK-7BizcU-6fJFni-38DoTP-8smzb-rQXyi-fcDEVr-7b85h1-7Y7hwQ-dKEkPA-7AtcjM-keJ7tm-7NDCUj-dGSKFe-7kYDHP-8cXRa5-bKAgZ-5McrAk-6eCU2x-ijPiDn-9ycYtL-2rSBGq-7DRCHb-7Aniiq-7BiAts-dTdnGK-9wm9XC-dKEkb7-7tzuvX-7pSYi1-7uyoDN-dKyToP-7yA4oj-6x661Y-7nXHTq-7B9BnA-7zfV92-kSpeT/](images/poodle.jpg)
+https://secure.flickr.com/photos/imagesbywestfall/3452788638/in/photolist-6g7rLA-5Ly2TJ-dhgp22-7Eq65g-4L9Gkr-4L9Gkv-5MgFuL-86RKEk-a2Vhpv-54pS7t-uKNEz-2yMbx-7KkzPK-7BizcU-6fJFni-38DoTP-8smzb-rQXyi-fcDEVr-7b85h1-7Y7hwQ-dKEkPA-7AtcjM-keJ7tm-7NDCUj-dGSKFe-7kYDHP-8cXRa5-bKAgZ-5McrAk-6eCU2x-ijPiDn-9ycYtL-2rSBGq-7DRCHb-7Aniiq-7BiAts-dTdnGK-9wm9XC-dKEkb7-7tzuvX-7pSYi1-7uyoDN-dKyToP-7yA4oj-6x661Y-7nXHTq-7B9BnA-7zfV92-kSpeT/](/images/poodle.jpg)
 
 The client that I am working with runs a web store and needed some
 changes made to the Spree/Paypal Express Checkout gateway to support

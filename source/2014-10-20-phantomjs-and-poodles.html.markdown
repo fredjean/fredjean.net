@@ -35,3 +35,20 @@ end
 ```
 
 At this point, the tests started to pass again.
+
+### Update:
+
+You can also tell PhantomJS to use any SSL/TlS protocol with the
+following syntax:
+
+```ruby
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app,
+      :phantomjs_options => ['--ssl-protocol=ANY'], :debug => false)
+  end
+end
+```
+
+This will trigger the usual SSL/TlS negotiation and allow the connection
+to proceed with any supported protocol version.
+

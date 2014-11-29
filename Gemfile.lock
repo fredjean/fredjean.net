@@ -10,10 +10,10 @@ GIT
 
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 88698cb2b2942c243f991430899fa90a26f65b40
+  revision: 900e0e3ca55c66df586b491d99bd58c1aafd9981
   branch: master
   specs:
-    middleman-s3_sync (3.0.37)
+    middleman-s3_sync (3.0.38)
       colorize
       fog (>= 1.25.0)
       map
@@ -71,10 +71,10 @@ GEM
       ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
       opennebula
-    fog-brightbox (0.6.1)
+    fog-brightbox (0.7.0)
       fog-core (~> 1.22)
       fog-json
-      inflecto
+      inflecto (~> 0.0.2)
     fog-core (1.25.0)
       builder
       excon (~> 0.38)
@@ -98,7 +98,7 @@ GEM
     fog-softlayer (0.3.24)
       fog-core
       fog-json
-    fog-terremark (0.0.2)
+    fog-terremark (0.0.3)
       fog-core
       fog-xml
     fog-vmfusion (0.0.1)
@@ -191,11 +191,12 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    nokogiri (1.6.4.1)
+    nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
-    opennebula (4.10.0)
+    opennebula (4.10.1)
       json
       nokogiri
+      rbvmomi
     parallel (1.1.2)
     pmap (1.0.1)
     pry (0.9.12.6)
@@ -214,6 +215,10 @@ GEM
       ffi (>= 0.5.0)
     rb-kqueue (0.2.3)
       ffi (>= 0.5.0)
+    rbvmomi (1.8.2)
+      builder
+      nokogiri (>= 1.4.1)
+      trollop
     redcarpet (3.1.2)
     rouge (1.6.2)
     ruby-progressbar (1.7.0)
@@ -250,6 +255,7 @@ GEM
       pry (~> 0.9, < 0.10)
       pusher-client (~> 0.4)
       typhoeus (~> 0.6, >= 0.6.8)
+    trollop (2.0)
     typhoeus (0.6.9)
       ethon (>= 0.7.1)
     tzinfo (1.2.1)

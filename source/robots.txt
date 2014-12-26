@@ -1,0 +1,6 @@
+i# robots.txt generated at http://www.mcanerin.com
+User-agent: *
+Disallow:
+Disallow: /cgi-bin/
+Sitemap: https://fredjean.net/sitemap.xml
+

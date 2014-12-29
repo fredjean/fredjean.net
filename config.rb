@@ -135,5 +135,9 @@ activate :cloudfront do |cf|
   cf.filter = /\.html$/i
 end
 
+after_s3_sync do |files_by_status|
+  invalidate files_by_status[:updated]
+end
+
 activate :syntax, line_numbers: true
 

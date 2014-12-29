@@ -11,4 +11,4 @@ task :invalidate do
   system 'middleman invalidate'
 end
 
-task default: [:build, :sync, :invalidate]
+task default: [:build, :sync]

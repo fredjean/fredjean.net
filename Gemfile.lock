@@ -10,10 +10,10 @@ GIT
 
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: bf4b3093d489301164d2a9b5ad5e6119f0aa6653
+  revision: 71038123e1ab9aaa837fc25ec3c5b27b8d7ec233
   branch: master
   specs:
-    middleman-s3_sync (3.0.39)
+    middleman-s3_sync (3.0.40)
       ansi (~> 1.4.3)
       fog (>= 1.25.0)
       map
@@ -200,7 +200,7 @@ GEM
       middleman-core (~> 3.2)
       rouge (~> 1.0)
     mime-types (2.4.3)
-    mini_portile (0.6.1)
+    mini_portile (0.6.2)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)

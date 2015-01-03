@@ -135,6 +135,11 @@ activate :cloudfront do |cf|
   cf.filter = /\.html$/i
 end
 
+caching_policy 'image/png', max_age: (60 * 60 * 24 * 365)
+caching_policy 'image/jpg', max_age: (60 * 60 * 24 * 365)
+caching_policy 'text/css', max_age: (60 * 60 * 24 * 365)
+caching_policy 'application/javascript', max_age: (60 * 60 * 24 * 365)
+
 after_s3_sync do |files_by_status|
   invalidate files_by_status[:updated]
 end

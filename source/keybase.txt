@@ -1,0 +1,93 @@
+==================================================================
+https://keybase.io/fredjean
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://fredjean.net
+  * I am fredjean (https://keybase.io/fredjean) on keybase.
+  * I have a public key with fingerprint 544E 0082 6130 FEDB 2F38  6BDC A860
+  * 477C 385D 6C59
+
+To claim this, I am signing this object:
+
+{
+  "body": {
+    "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.7.3"
+
+    },
+    "key": {
+            "fingerprint": "544e00826130fedb2f386bdca860477c385d6c59",
+            "host": "keybase.io",
+            "key_id": "A860477C385D6C59",
+            "uid": "a413ad36a216a903c3bd50a31af05f00",
+            "username": "fredjean"
+
+    },
+    "merkle_root": {
+            "ctime": 1422902646,
+            "hash":
+"f549f6fd4df680d4e447314d930a4484b68a42eca59d552c054d5bec9f5517ef57b9015c7ac94b20195f7a6210169c971cee98ba4d57b7f6f332b76271605915",
+            "seqno": 146219
+
+    },
+    "service": {
+            "hostname": "fredjean.net",
+            "protocol": "https:"
+
+    },
+        "type": "web_service_binding",
+        "version": 1
+
+  },
+    "ctime": 1422902660,
+    "expire_in": 157680000,
+    "prev": "e864dfa2e52a821c75a0b20160ac8095d917904f9fb29fb3357c8fa932b4ad4f",
+    "seqno": 9,
+    "tag": "signature"
+
+}
+
+which yields the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+Comment: GPGTools - http://gpgtools.org
+
+owFdkgtMHFUUhpfloZCA21YaRaTLBiikdJ3XnQcQwEDQFixGQSsKy52ZO+zw2IXZ
+XXDBxSYSKCkQCksrCE0fCJUiCQG0tJXGah+xEbCmQJCENFilPqDRauyD6Axi1N5k
+knvnfuc/5z/ntgb76vQ+yX0tEd4UA+tz9Ravy5m6WFdj4u2i25RQYxJKZWRzajsb
+LEOmBFMJcvPQgcyy3Wizi8hc7DBuMPGmSqQ4ZLtNpTAzYyZNnngN14Il2VaElHJF
+1rRMgKIQhrEEjZOYhESekEiW5kUBsjRGMYxAskCkBcCpkla7w/m/rKZ1TYssqn+f
+/ZtPU/l0Om2dd61fQAonoUjSkMBpyGGkQPIiwCCJQwkDEoZpoAMpG5YkBYnFCNq0
+esuQUlKKLIrdvm5acMoaglMEwWEETdFqRdBh1YIAxUm0JFKiRLOYSCGKYkicEjkS
+gxTFUjzNQopAAgScCAAhYIASAY8ETgIAZ5AEGJ7DcCAwUOAonsBwDkgMpAkcw2lO
+4BhcQIhjeahGMTyjZiJJgmdogsFpDHA4UC04UIXNrhWnRnEe7axUygLS6tba9pA7
+sw1pMypX7E67YC9Vb6xOZ7kjQXPtdJdraBXihywbKhZetonq1P47VlxFH+oIjcWb
+0JvlsoIsskYARu2GurREqFLVRCyttggSCBCQJXCBARDT7NIYFFiMAyKHMxxGSZzE
+E+pHkoARWAlyqlsKipT0r09OrRMWqZIOucgGnS4FmTyN+nA/nY9eF+Cv196tLijQ
+8M9jvjBs0PVGX4n7sye240Tb0kyvvi8b1B/3Nb+fN1R4U0hq+PVSR6Lx5nbSPHcv
+y5p5vulgc+Se00sPHN1dv+Sv3p+u+l0MH97pd/fyxZAnMlK7ko0xka3K5ilX0vcN
+Zyab/rj+XllzgSe03bbsXRkvGN1/4HKJvvOtb0rzgjbHfHs81LAvKHDV2HVy5Ni2
+5Yn+uS2Hw4eapgwzjsyx9KfvBHScxvrzDZG+/tVzz71YOt9jjlu9ncgNtn01lmr0
+728ZO4Vfujt27Ejja/XTvd7HUzq/E07mUkuHu+k7rmdefuenwonkUK8lxHdiwbs7
+IjJuti41ZcT9wYniQ+kFjywuKxULqT3bghPZfFfV/a3RbwfXx/ItmSFfR4OmyZqy
+hZa60Fp3mDArRBEVaZOntiZf+/hH97uFGUa2szq9vUEZ+BzIT0adDc1tTVs7n9/5
+xZplZc9T+XjpYxnBpsCR2Owh97UYa05T9+LBfVYhZ3aT7+Lz066BxtQbYUVH5910
+0o5Y+swu7tw5z0fji4nm4VelgL2zFT7C0dGXioOqa+a7YgIzEnb2930SU+AZfiFP
+9+EK3d5/dXfP2BtRO36Y8c/1jP/Wuf/BGowa/Syi3Bvml561N+FI+K5Ckal5vflA
+V9unPzcEPFoLrn85sOXQhXtFV7Jyc2uLkoJd6TecILt6cHBTVMqt2zGvwEJ+O332
+Lw==
+=+w+p
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/fredjean
+
+==================================================================
+
+

@@ -24,3 +24,5 @@
 
 # Ignore .rbenv-vars
 .rbenv-vars
+
+.env

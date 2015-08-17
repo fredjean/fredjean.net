@@ -8,16 +8,14 @@ GIT
       middleman-core (>= 3.0.0)
       parallel
 
-GIT
-  remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 260e1159c80e02ceecd9f350babb85f7dced0d09
-  branch: master
+PATH
+  remote: ~/dev/fredjean/middleman-s3_sync
   specs:
-    middleman-s3_sync (3.0.47)
+    middleman-s3_sync (3.3.0)
       ansi (~> 1.5.0)
       fog-aws (>= 0.1.1)
       map
-      middleman-core (>= 3.0.0)
+      middleman-core (>= 3.3.0)
       pmap
       ruby-progressbar
       unf
@@ -26,7 +24,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.1)
-    activesupport (4.1.10)
+    activesupport (4.1.12)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -35,9 +33,9 @@ GEM
     addressable (2.3.8)
     ansi (1.5.0)
     auto_excerpt (0.7.1)
-    backports (3.6.4)
+    backports (3.6.6)
     builder (3.0.4)
-    celluloid (0.16.0)
+    celluloid (0.16.1)
       timers (~> 4.0.0)
     chunky_png (1.3.4)
     coderay (1.1.0)
@@ -57,24 +55,26 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
+    dotenv (1.0.2)
     erubis (2.7.0)
-    ethon (0.7.3)
+    ethon (0.7.4)
       ffi (>= 1.3.0)
-    excon (0.45.3)
-    execjs (2.5.2)
+    excon (0.45.4)
+    execjs (2.6.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
-    faraday_middleware (0.9.1)
+    faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
-    ffi (1.9.8)
+    ffi (1.9.10)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
-    fog (1.30.0)
+    fog (1.33.0)
       fog-atmos
-      fog-aws (~> 0.0)
+      fog-aws (>= 0.6.0)
       fog-brightbox (~> 0.4)
-      fog-core (~> 1.27, >= 1.27.4)
-      fog-ecloud
+      fog-core (~> 1.32)
+      fog-dynect
+      fog-ecloud (= 0.1.1)
       fog-google (>= 0.0.2)
       fog-json
       fog-local
@@ -95,26 +95,30 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.4.0)
+    fog-aws (0.7.4)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-brightbox (0.7.1)
+    fog-brightbox (0.8.0)
       fog-core (~> 1.22)
       fog-json
       inflecto (~> 0.0.2)
-    fog-core (1.30.0)
+    fog-core (1.32.1)
       builder
       excon (~> 0.45)
       formatador (~> 0.2)
       mime-types
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
+    fog-dynect (0.0.1)
+      fog-core
+      fog-json
+      fog-xml
     fog-ecloud (0.1.1)
       fog-core
       fog-xml
-    fog-google (0.0.5)
+    fog-google (0.0.7)
       fog-core
       fog-json
       fog-xml
@@ -127,7 +131,7 @@ GEM
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
-    fog-profitbricks (0.0.2)
+    fog-profitbricks (0.0.5)
       fog-core
       fog-xml
       nokogiri
@@ -145,7 +149,7 @@ GEM
     fog-serverlove (0.1.2)
       fog-core
       fog-json
-    fog-softlayer (0.4.6)
+    fog-softlayer (0.4.7)
       fog-core
       fog-json
     fog-storm_on_demand (0.1.1)
@@ -171,14 +175,14 @@ GEM
       multi_json (~> 1.0)
       net-http-persistent (>= 2.7)
       net-http-pipeline
-    haml (4.0.6)
+    haml (4.0.7)
       tilt
-    highline (1.7.2)
+    highline (1.7.3)
     hike (1.2.3)
     hitimes (1.2.2)
     hooks (0.4.0)
       uber (~> 0.0.4)
-    htmlcompressor (0.1.2)
+    htmlcompressor (0.2.0)
     httparty (0.13.5)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -187,10 +191,10 @@ GEM
     inflecto (0.0.2)
     ipaddress (0.8.0)
     json (1.8.3)
-    kramdown (1.7.0)
+    kramdown (1.8.0)
     launchy (2.4.3)
       addressable (~> 2.3)
-    listen (2.10.0)
+    listen (2.10.1)
       celluloid (~> 0.16.0)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -226,8 +230,11 @@ GEM
       rack-test (~> 0.6.2)
       thor (>= 0.15.2, < 2.0)
       tilt (~> 1.4.1, < 2.0)
-    middleman-minify-html (3.4.0)
-      htmlcompressor (~> 0.1.0)
+    middleman-dotenv (1.1.1)
+      dotenv (~> 1.0)
+      middleman-core (>= 3.2)
+    middleman-minify-html (3.4.1)
+      htmlcompressor (~> 0.2.0)
       middleman-core (>= 3.2)
     middleman-smusher (3.0.0)
       middleman (>= 3.0.0)
@@ -242,8 +249,8 @@ GEM
       rouge (~> 1.0)
     mime-types (2.6.1)
     mini_portile (0.6.2)
-    minitest (5.7.0)
-    multi_json (1.11.1)
+    minitest (5.8.0)
+    multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     net-http-persistent (2.9.4)
@@ -259,7 +266,7 @@ GEM
       tilt (~> 1.4.1)
     padrino-support (0.12.5)
       activesupport (>= 3.1)
-    parallel (1.6.0)
+    parallel (1.6.1)
     pmap (1.0.2)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -268,23 +275,23 @@ GEM
     pusher-client (0.6.2)
       json
       websocket (~> 1.0)
-    rack (1.6.1)
+    rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rake (10.4.2)
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    redcarpet (3.2.3)
-    rouge (1.9.0)
+    redcarpet (3.3.2)
+    rouge (1.9.1)
     ruby-progressbar (1.7.5)
-    sass (3.4.14)
+    sass (3.4.16)
     slop (3.6.0)
     smusher (0.4.9)
       httpclient (>= 2.2)
       json
       rake
-    sprockets (2.12.3)
+    sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -299,7 +306,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
-    timers (4.0.1)
+    timers (4.0.2)
       hitimes
     travis (1.6.17)
       addressable (~> 2.3)
@@ -312,11 +319,11 @@ GEM
       pry (~> 0.9, < 0.10)
       pusher-client (~> 0.4)
       typhoeus (~> 0.6, >= 0.6.8)
-    typhoeus (0.7.1)
-      ethon (>= 0.7.1)
+    typhoeus (0.7.3)
+      ethon (>= 0.7.4)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uber (0.0.13)
+    uber (0.0.14)
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -335,6 +342,7 @@ DEPENDENCIES
   middleman (~> 3.3.0)
   middleman-blog
   middleman-cloudfront
+  middleman-dotenv
   middleman-minify-html
   middleman-s3_redirect!
   middleman-s3_sync!

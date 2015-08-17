@@ -121,6 +121,8 @@ set :relative_links, true
 
 page "/feed.xml", :layout => false
 
+activate :dotenv
+
 activate :s3_sync do |sync|
   sync.bucket = 'fredjean.net'
   sync.region = 'us-east-1'
@@ -134,10 +136,14 @@ activate :s3_redirect do |redirect|
   redirect.after_build = false
 end
 
-caching_policy 'image/png', max_age: 12.months, expires: 12.months.from_now
-caching_policy 'image/jpeg', max_age: 12.months, expires: 12.months.from_now
-caching_policy 'text/css', max_age: 12.months, expires: 12.months.from_now
-caching_policy 'application/javascript', max_age: 12.months, expires: 12.months.from_now
+#caching_policy 'image/png', max_age: 12.months, expires: 12.months.from_now
+#caching_policy 'image/jpeg', max_age: 12.months, expires: 12.months.from_now
+#caching_policy 'text/css', max_age: 12.months, expires: 12.months.from_now
+#caching_policy 'application/javascript', max_age: 12.months, expires: 12.months.from_now
+
+#after_s3_sync do |files_by_status|
+  #invalidate files_by_status[:updated]
+#end
 
 activate :syntax, line_numbers: true
 

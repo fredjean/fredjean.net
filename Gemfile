@@ -4,10 +4,12 @@ gem "middleman", "~> 3.3.0"
 gem "middleman-blog"
 gem "middleman-smusher"
 gem "middleman-syntax"
-gem "middleman-s3_sync", :git => "https://github.com/fredjean/middleman-s3_sync.git", :branch => :master
+# gem "middleman-s3_sync", :git => "https://github.com/fredjean/middleman-s3_sync.git", :branch => :master
+gem "middleman-s3_sync", :path => "~/dev/fredjean/middleman-s3_sync"
 gem "middleman-s3_redirect", :git => "https://github.com/fredjean/middleman-s3_redirect", :branch => :master
 gem "middleman-cloudfront"
 gem "middleman-minify-html"
+gem "middleman-dotenv"
 
 # For feed.xml.builder
 gem "builder", "~> 3.0.0"

@@ -132,21 +132,10 @@ activate :s3_redirect do |redirect|
   redirect.after_build = false
 end
 
-activate :cloudfront do |cf|
-  cf.access_key_id = ENV['AWS_ACCESS_KEY_ID']
-  cf.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
-  cf.distribution_id = 'ERUO4ZK8VN1P2'
-  cf.filter = /\.html$/i
-end
-
 caching_policy 'image/png', max_age: 12.months, expires: 12.months.from_now
 caching_policy 'image/jpeg', max_age: 12.months, expires: 12.months.from_now
 caching_policy 'text/css', max_age: 12.months, expires: 12.months.from_now
 caching_policy 'application/javascript', max_age: 12.months, expires: 12.months.from_now
-
-after_s3_sync do |files_by_status|
-  invalidate files_by_status[:updated]
-end
 
 activate :syntax, line_numbers: true
 

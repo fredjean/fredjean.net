@@ -16,7 +16,7 @@ PATH
       fog-aws (>= 0.1.1)
       map
       middleman-core (>= 3.3.0)
-      pmap
+      parallel
       ruby-progressbar
       unf
 
@@ -24,7 +24,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.1)
-    activesupport (4.1.12)
+    activesupport (4.1.13)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -95,7 +95,7 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.7.4)
+    fog-aws (0.7.6)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -179,7 +179,7 @@ GEM
       tilt
     highline (1.7.3)
     hike (1.2.3)
-    hitimes (1.2.2)
+    hitimes (1.2.3)
     hooks (0.4.1)
       uber (~> 0.0.14)
     htmlcompressor (0.2.0)
@@ -247,7 +247,7 @@ GEM
     middleman-syntax (2.0.0)
       middleman-core (~> 3.2)
       rouge (~> 1.0)
-    mime-types (2.6.1)
+    mime-types (2.6.2)
     mini_portile (0.6.2)
     minitest (5.8.0)
     multi_json (1.11.2)
@@ -267,7 +267,6 @@ GEM
     padrino-support (0.12.5)
       activesupport (>= 3.1)
     parallel (1.6.1)
-    pmap (1.0.2)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -279,7 +278,7 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rake (10.4.2)
-    rb-fsevent (0.9.5)
+    rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redcarpet (3.3.2)
@@ -306,7 +305,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
-    timers (4.0.2)
+    timers (4.0.4)
       hitimes
     travis (1.6.17)
       addressable (~> 2.3)
@@ -323,7 +322,7 @@ GEM
       ethon (>= 0.7.4)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uber (0.0.14)
+    uber (0.0.15)
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)

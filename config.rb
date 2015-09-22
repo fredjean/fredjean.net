@@ -39,6 +39,8 @@ Time.zone = 'America/Denver'
 #   @which_fake_page = "Rendering a fake page with a variable"
 # end
 
+set :partials_dir, 'partials'
+
 ###
 # Helpers
 

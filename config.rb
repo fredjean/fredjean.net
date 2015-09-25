@@ -86,12 +86,6 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
-  # Enable cache buster
-  # activate :cache_buster
-
-  # Use relative URLs
-  # activate :relative_assets
-
   # Compress PNGs after build
   # First: gem install middleman-smusher
   require "middleman-smusher"
@@ -138,14 +132,10 @@ activate :s3_redirect do |redirect|
   redirect.after_build = false
 end
 
-#caching_policy 'image/png', max_age: 12.months, expires: 12.months.from_now
-#caching_policy 'image/jpeg', max_age: 12.months, expires: 12.months.from_now
-#caching_policy 'text/css', max_age: 12.months, expires: 12.months.from_now
-#caching_policy 'application/javascript', max_age: 12.months, expires: 12.months.from_now
-
-#after_s3_sync do |files_by_status|
-  #invalidate files_by_status[:updated]
-#end
+caching_policy 'image/png', max_age: 12.months, expires: 12.months.from_now
+caching_policy 'image/jpeg', max_age: 12.months, expires: 12.months.from_now
+caching_policy 'text/css', max_age: 12.months, expires: 12.months.from_now
+caching_policy 'application/javascript', max_age: 12.months, expires: 12.months.from_now
 
 activate :syntax, line_numbers: true
 

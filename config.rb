@@ -81,7 +81,7 @@ page '/404.html'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  activate :minify_css
+  #activate :minify_css
 
   # Minify Javascript on build
   activate :minify_javascript
@@ -117,6 +117,8 @@ end
 
 activate :directory_indexes
 activate :asset_hash
+# For example, change the Compass output style for deployment
+activate :minify_css
 set :relative_links, true
 
 page "/feed.xml", :layout => false

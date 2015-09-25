@@ -10,14 +10,14 @@ GIT
 
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 5ee0bfc5389d0c45db51c295465d95b0cce5e464
+  revision: 3f594c4802510b7e9f9879582000c865bbdc5974
   branch: master
   specs:
     middleman-s3_sync (3.3.0)
       ansi (~> 1.5.0)
       fog-aws (>= 0.1.1)
       map
-      middleman-core (>= 3.3.0)
+      middleman-core (~> 3.3)
       parallel
       ruby-progressbar
       unf

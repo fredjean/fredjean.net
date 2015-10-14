@@ -10,10 +10,10 @@ GIT
 
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 7bda942f436feb452f5f9119f9220c445aa25db4
+  revision: 3244809dc117e5eac70f4f951cdd9c68d8e38e7b
   branch: master
   specs:
-    middleman-s3_sync (3.3.2)
+    middleman-s3_sync (3.3.3)
       ansi (~> 1.5.0)
       fog-aws (>= 0.1.1)
       map

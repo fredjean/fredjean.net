@@ -4,7 +4,8 @@ gem "middleman", "~> 3.4.0"
 gem "middleman-blog"
 gem "middleman-smusher"
 gem "middleman-syntax"
-gem "middleman-s3_sync", :git => "https://github.com/fredjean/middleman-s3_sync.git", :branch => :master
+#gem "middleman-s3_sync", "~> 3.3.0"
+gem "middleman-s3_sync", :git => "https://github.com/fredjean/middleman-s3_sync.git", :branch => 'v3.3.x'
 #gem "middleman-s3_sync", :path => '~/dev/fredjean/middleman-s3_sync'
 
 gem "middleman-s3_redirect", :git => "https://github.com/fredjean/middleman-s3_redirect", :branch => :master

@@ -9,19 +9,19 @@ published: true
 </p>
 <p>He questioned the counterintuitive result of blank? returning false on an empty Java array. He then asked which whether Ruby, JRuby or Rails were the culprit.</p>
 <p>I played with the Rails console a little bit and started to dig into the code. It turns out that Rails adds a blank? method to the Ruby Object class. Here is it's implementation:</p>
-<script src="http://gist.github.com/265132.js?file=blank.rb"></script>
+<script src="https://gist.github.com/265132.js?file=blank.rb"></script>
 <p> </p>
 <p>It also aliases blank? to empty? on arrays further down. As a result, the expected behavior of calling blank? on an empty array is to return true:</p>
 <p>
-<script src="http://gist.github.com/265132.js?file=gistfile2.rb"></script>
+<script src="https://gist.github.com/265132.js?file=gistfile2.rb"></script>
 </p>
 <p>The Java array does not respond to the empty? method:</p>
 <p>
-<script src="http://gist.github.com/265132.js?file=gistfile4.rb"></script>
+<script src="https://gist.github.com/265132.js?file=gistfile4.rb"></script>
 </p>
 <p>We can see that the Java native array does not share the same ancestry as the Ruby Array:</p>
 <p>
-<script src="http://gist.github.com/265132.js?file=gistfile3.rb"></script>
+<script src="https://gist.github.com/265132.js?file=gistfile3.rb"></script>
 </p>
 <p>None of the classes and modules returned by x.class.ancestors implement the empty? method. Rails has no choice to fall back to the default implementation and to return false to blank? since any instantiated object isn't nil by definition (except for nil, which is always nil).</p>
 <p>The real culprit here isn't Ruby as Stu alluded in a later tweet. Rather, it is the lack of an empty? implementation on the Java native array class ancestry that is the root cause of the surprising behavior. The best fix would be to implement the empty? method on the ArrayJavaProxy class to Rails could call it.</p>

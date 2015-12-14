@@ -2,9 +2,9 @@ xml.instruct!
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
   xml.title "Out of my mind..."
   xml.subtitle "Frederic Jean's blog"
-  xml.id "http://fredjean.net"
-  xml.link "href" => "http://fredjean.net/"
-  xml.link "href" => "http://fredjean.net/feed.xml", "rel" => "self"
+  xml.id "https://fredjean.net"
+  xml.link "href" => "https://fredjean.net/"
+  xml.link "href" => "https://fredjean.net/feed.xml", "rel" => "self"
   xml.updated blog.articles.first.date.to_time.iso8601
   xml.author { xml.name "Frederic Jean" }
 

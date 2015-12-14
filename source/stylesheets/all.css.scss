@@ -127,6 +127,25 @@ nav {
       font-size: 11pt;
     }
   }
+
+  form {
+    input, textarea, button {
+      width: 100%;
+      display: block;
+      line-height: 30px;
+      font-size: 18px;
+      top: 7px;
+      left: 10px;
+      right: 9px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      border-width: 1px;
+    }
+
+    padding-bottom: 4.5px;
+  }
+
 }
 
 footer {

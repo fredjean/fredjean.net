@@ -36,39 +36,33 @@
 </head>
 <body>
 <div class="page">
-
-  <nav>
+  <sidebar class="byline">
     <div class="nav-inner">
-    <ul>
-      <li>
-      <a href="/"> <%= image_tag 'avatar.png', class: 'avatar' %> </a>
-      </li>
-      <li>
-      <blockquote>
-        I take bits from bucket a, twiddle them a little and put
-        them in bucket b. Sometimes, I put them back in bucket a.
-      </blockquote>
-      </li>
+      <ul>
+        <li>
+        <a href="/"> <%= image_tag 'avatar.png', class: 'avatar' %> </a>
+        </li>
+        <li>
+        <blockquote>
+          I take bits from bucket a, twiddle them a little and put
+          them in bucket b. Sometimes, I put them back in bucket a.
+        </blockquote>
+        </li>
 
-      <li>
-        I own and operate Command-Shift-N LLC where I solve problems on behalf of my clients.
-      </li>
-      <li>
-        <a href="/contact">Ask me how I can help!</a>
-      </li>
-      <li>I share code on <a href="https://github.com/fredjean">GitHub</a>.</li>
-      <li>I tweet as <a href="https://twitter.com/fredjean">fredjean</a>.</li>
-      <li>
-      I have a <a href="/fredjean_pgp_public_key.asc">PGP public key</a> that you can use to send me private messages or to verify that I did indeed author one.</li>
-      <li>The opinions expressed here and elsewhere do not reflect the opinions of my past employers.</li>
-      <li>
-        <p class="license">&copy; 2007-<%= Time.now.year %> Frederic Jean</p>
-        <p class="license"><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Out of my mind...</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://fredjean.net" property="cc:attributionName" rel="cc:attributionURL">Frederic Jean</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
-        <p class="license">Background image from <a href="https://www.flickr.com/photos/archer10/">Dennis Jarvis</a> on flickr.</p>
-      </li>
-    </ul>
+        <li>
+          I own and operate Command-Shift-N LLC where I solve problems on behalf of my clients.
+        </li>
+        <li>
+          <a href="/contact">Ask me how I can help!</a>
+        </li>
+        <li>I share code on <a href="https://github.com/fredjean">GitHub</a>.</li>
+        <li>I tweet as <a href="https://twitter.com/fredjean">fredjean</a>.</li>
+        <li>
+        I have a <a href="/fredjean_pgp_public_key.asc">PGP public key</a> that you can use to send me private messages or to verify that I did indeed author one.</li>
+        <li>The opinions expressed here and elsewhere do not reflect the opinions of my past employers.</li>
+      </ul>
     </div>
-  </nav>
+  </sidebar>
   <div class="content">
     <%= yield %>
   </div>
@@ -91,6 +85,12 @@
         <% end %>
         </ol>
       </div>
+    </div>
+  </footer>
+  <footer>
+    <div class="nav-inner">
+        <p>&copy; 2007-<%= Time.now.year %> Frederic Jean</p>
+        <p><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Out of my mind...</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://fredjean.net" property="cc:attributionName" rel="cc:attributionURL">Frederic Jean</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
     </div>
   </footer>
   </div>

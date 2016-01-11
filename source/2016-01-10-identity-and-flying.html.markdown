@@ -7,7 +7,7 @@ tags:
 ![Airport Security. Public Domain, https://www.flickr.com/photos/sixmilliondollardan/3382932556/in/photolist-69WpZo-6ovssq-4Pud5x-3yTksP-BMEB-6jdHz1-4vGox9-e8WbBd-Eq1JM-4u6cXw-f49kST-9yMyqh-2mPphB-7tQfFt-7zd55c-a6UnD2-4MZHTA-8G8fAm-8iDGiZ-b2hbhp-b636x-661hXd-459nE-acE949-kQFt6-53B2Fg-EMBoQ-b5awD-8SNYPd-8U8gQ7-6EsPiP-5YKWV9-nXRXdD-5NpqpQ-6jq1w-4FZCDR-b5axC-8UYf8L-AHptGi-5MF1mL-vBhvH-e3zcE-eNmLN9-58Vjve-96E2cA-6unyV7-7qNu4W-5588mk-bXavMg-ggg1g](/images/airport_security.jpg)
 
 Authentication and authorization are two concepts that are often mingled
-together. In a lot of Rails app, there is little though given to it
+together. In a lot of Rails app, there is little thought given to it
 beyond adding `devise` to an app and running the generator to build the
 User model. In Spring based app, including Spring Security with a
 minimal configuration is often all of the security you need.

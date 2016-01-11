@@ -1,6 +1,6 @@
 task :build do
   puts "Using #{ENV['LANG']} encoding..."
-  system 'middleman build'
+  system 'middleman build --clean'
 end
 
 task :sync do

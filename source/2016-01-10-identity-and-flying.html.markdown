@@ -31,8 +31,7 @@ could be a driver's license, a passport or a permanent resident card.
 This document asserts your identity. It is your authentication. It is
 not sufficient to get you through security though.
 
-In itself, it is not sufficient to gain access to your gate though. A
-second document is required. This second document is your boarding pass.
+A second document is required. This second document is your boarding pass.
 The boarding pass asserts that you are authorized to access a specific
 seat on a specific airplane. It is your authorization. In itself, it is
 not sufficient to get you through airport security either.

@@ -40,7 +40,7 @@ not sufficient to get you through airport security either.
 Once you passed security, your boarding pass is usually sufficient to
 your gate and to your flight for domestic flights in the United States.
 
-OAuth2 is described as an authorization document. It is a protocol where
+OAuth2 is described as an authorization protocol. It is a protocol where
 you receives access and refresh tokens in exchange for some form or
 identity (and authorizing a service to access your information). The
 access token itself doesn't imply authentication. A third party may use

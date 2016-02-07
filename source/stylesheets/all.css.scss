@@ -8,7 +8,7 @@ $susy: (
   /* Tells Susy to use 12 columns */
   columns: 12,
   /* Tells Susy that the container has a max-width of 1120px */
-  container: 960px,
+  container: 768px,
   /* Tells Susy to use border-box */
   global-box-sizing: border-box
   );
@@ -32,12 +32,12 @@ body {
 
 sidebar {
   padding-left: 0.25em;
-  @media(min-width: 960px) {
+  @media(min-width: 768px) {
     position: fixed;
   }
 
   .nav-inner {
-    @media(min-width: 960px) {
+    @media(min-width: 768px) {
       @include container;
     }
     margin-right: 0;
@@ -50,13 +50,13 @@ sidebar {
 
     padding-top: 55px;
     &.byline {
-      @media(min-width: 960px) {
+      @media(min-width: 768px) {
         top: 30;
       }
     }
 
     ul {
-      @media(min-width: 960px) {
+      @media(min-width: 768px) {
         @include span(4);
       }
       list-style-type: none;
@@ -67,7 +67,7 @@ sidebar {
         padding-top: 15px;
 
         img {
-          @media(min-width: 960px) {
+          @media(min-width: 768px) {
             max-width: 90%;
             max-height: 90%;
             width: 90%;
@@ -87,7 +87,7 @@ sidebar {
   }
 
   &.license {
-    @media(min-width: 960px) {
+    @media(min-width: 768px) {
       bottom: 0;
     }
 
@@ -102,7 +102,7 @@ sidebar {
 }
 
 .content {
-  @media(min-width: 960px) {
+  @media(min-width: 768px) {
     @include pre(4);
     @include span(8 of 12);
   }
@@ -182,7 +182,7 @@ sidebar {
 
 footer {
   @include container;
-  @media(min-width: 960px) {
+  @media(min-width: 768px) {
     @include pre(4);
     @include span(8 of 12);
   }

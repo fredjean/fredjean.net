@@ -31,15 +31,22 @@ body {
 }
 
 sidebar {
-  padding-left: 0.25em;
   @media(min-width: 768px) {
+    padding-left: 0.25em;
     position: fixed;
   }
+
 
   .nav-inner {
     @media(min-width: 768px) {
       @include container;
     }
+
+    @media(max-width: 767px) {
+      background-color: rgba(220, 220, 220, 1);
+      padding-bottom: 20px;
+    }
+
     margin-right: 0;
     text-align: center;
     font-size: 11pt;
@@ -150,6 +157,20 @@ sidebar {
       }
     }
 
+    @media(max-width: 767px) {
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .byline img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
     pre {
       padding: 4.5px;
     }
@@ -196,10 +217,14 @@ footer {
   z-index: 99;
 
   .recent {
-    @include span(6);
+    @media(min-width: 768px) {
+      @include span(6);
+    }
   }
   .by_year {
-    @include span(3 last);
+    @media(min-width: 768px) {
+      @include span(3 last);
+    }
   }
 }
 

@@ -2,7 +2,7 @@
   <article>
     <h1><%= current_page.data.title %></h1>
     <%= yield %>
-    <%= partial :byline, locals: { article: current_article } %>
+    <%= partial "partials/byline", locals: { article: current_article } %>
   </article>
   <aside>
     <div id="disqus_thread"></div>

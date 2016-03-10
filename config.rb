@@ -55,6 +55,10 @@ end
 require 'lib/tweet_helpers'
 helpers TweetHelpers
 
+activate :directory_indexes
+activate :asset_hash
+set :relative_links, true
+
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
 
@@ -98,10 +102,6 @@ activate :blog do |blog|
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
 end
-
-activate :directory_indexes
-activate :asset_hash
-set :relative_links, true
 
 page "/feed.xml", :layout => false
 

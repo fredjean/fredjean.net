@@ -6,6 +6,7 @@ tags:
 ---
 
 ![coffee](/images/coffee.jpg)
+*Image by [Toshiyuki IMAI](https://www.flickr.com/photos/matsuyuki/)*
 
 I measure my mornings in cups of coffee.
 

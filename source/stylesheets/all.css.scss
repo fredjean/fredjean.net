@@ -8,7 +8,7 @@ $susy: (
   /* Tells Susy to use 12 columns */
   columns: 12,
   /* Tells Susy that the container has a max-width of 1120px */
-  container: 768px,
+  container: 968px,
   /* Tells Susy to use border-box */
   global-box-sizing: border-box
   );
@@ -112,6 +112,7 @@ sidebar {
   @media(min-width: 768px) {
     @include pre(4);
     @include span(8 of 12);
+    float: none !important;
   }
 
   position: relative;
@@ -120,6 +121,7 @@ sidebar {
 
   padding: 1.0em;
   padding-bottom: 0;
+
 
   article {
     border-bottom: 1px solid #ccc;

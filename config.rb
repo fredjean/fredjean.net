@@ -110,6 +110,9 @@ activate :s3_sync do |sync|
   sync.region = 'us-east-1'
   sync.prefer_gzip = true
   sync.version_bucket = true
+  sync.content_types = {
+    "test.me" => "text/plain"
+  }
 end
 
 #activate :s3_redirect do |redirect|

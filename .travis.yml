@@ -5,7 +5,7 @@ cache:
   - directories:
     - build
 rvm:
-  - 2.2.1
+  - 2.3.1
 env:
   global:
   - secure: by/hj8/Av29FVHNVj6EwRWuKdhfAqSywV3HJitFyi36GPSGyLnn+NKW0El3sglf+FnIQ04i+/erPQbHOSNWeP+moYwAJ2oLOMJfU9bXRRS4ADC6Vqo3gsWWN8eJYllkIi00pX2BojAv9bTPoBFkQPMTKaU3UyAEsLIl/RBebMQ8=

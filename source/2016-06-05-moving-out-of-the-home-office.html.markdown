@@ -6,6 +6,8 @@ tags:
   - office
 ---
 
+![New Office](/images/new_office.jpg)
+
 I was mostly on distributed teams when I worked at Sun Microsystems. Sometimes it was on a multi-site team, but more often than not I was on teams where I was one of the few, if not only, members based in Colorado. As a result, I had a well appointed home office. This came in handy when I switch from full time employment to full time consulting.
 
 The general advice when working from home is to do what you can to separate home life from work life. Have a separate room for work, have a door, teach your kids and spouse about work time, have a signal that indicate that you should not be disturbed. I was doing all of these things. My family was cooperative. It was mostly working.

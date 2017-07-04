@@ -12,6 +12,7 @@ delivering value and new features. Some of my work includes:
 # Ask Me How
 
 <form id="contact" accept-charset="UTF-8" action="https://fredjean.net/rest/contact" method="POST">
+  <input type="text" name="name" placeholder="Your Name" />
   <input type="email" name="email" placeholder="Your Email Address"/>
   <input type="text" name="phone" placeholder="Your Phone Number" />
   <textarea rows=10 name="message" placeholder="How can I help you?">

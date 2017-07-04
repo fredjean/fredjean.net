@@ -7,7 +7,7 @@ $("#contact").submit(function(event) {
         url: "/rest/contact",
         type: "POST",
         dataType: "json",
-        data: form.serializeArray().reduce(function(a, x) { a[x.name] = x.value; return a;}, {}),
+        data: JSON.stringify(form.serializeArray().reduce(function(a, x) { a[x.name] = x.value; return a;}, {})),
         success: function (response) {
             if (response.errorMessage) {
                 this.error(response.errorMessage);

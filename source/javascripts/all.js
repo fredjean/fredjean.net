@@ -1,6 +1,6 @@
 //= require_tree .
 
-$("#contact").submit(function(event) {
+$("#contact").submit(function (event) {
     event.preventDefault();
     var form = $(this);
     $.ajax({

@@ -11,10 +11,10 @@ delivering value and new features. Some of my work includes:
 
 # Ask Me How
 
-<form accept-charset="UTF-8" action="https://formkeep.com/f/e1aba8be8f2d" method="POST">
-  <input type="hidden" name="utf8" value="✓">
+<form id="contact" accept-charset="UTF-8" action="https://fredjean.net/rest/contact" method="POST">
   <input type="email" name="email" placeholder="Your Email Address"/>
-  <textarea rows=10 name="body" placeholder="How can I help you?">
+  <input type="text" name="phone" placeholder="Your Phone Number" />
+  <textarea rows=10 name="message" placeholder="How can I help you?">
   </textarea>
   <button type="submit">Ask Me!</button>
 </form>

@@ -10,6 +10,9 @@ require 'active_support/core_ext/numeric/time'
 require 'active_support/core_ext/date/calculations'
 require 'active_support/core_ext/date_time/calculations'
 
+# Load patch for middleman-s3_sync
+require_relative 'lib/patches/middleman_s3_sync_patch'
+
 ###
 # Page options, layouts, aliases and proxies
 ###

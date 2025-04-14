@@ -10,9 +10,6 @@ require 'active_support/core_ext/numeric/time'
 require 'active_support/core_ext/date/calculations'
 require 'active_support/core_ext/date_time/calculations'
 
-# Load patch for middleman-s3_sync
-require_relative 'lib/patches/middleman_s3_sync_patch'
-
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -130,4 +127,3 @@ caching_policy 'text/css', max_age: 12.months, expires: 12.months.from_now
 caching_policy 'application/javascript', max_age: 12.months, expires: 12.months.from_now
 
 activate :syntax, line_numbers: true
-

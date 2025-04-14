@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 task :build do
   puts "Using #{ENV['LANG']} encoding..."
   system 'middleman build --clean'
@@ -11,4 +13,4 @@ task :invalidate do
   system 'middleman invalidate'
 end
 
-task default: [:build, :sync]
+task default: %i[build sync]

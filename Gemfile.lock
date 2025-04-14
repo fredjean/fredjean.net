@@ -9,6 +9,7 @@ PATH
       middleman-cli
       middleman-core
       mime-types (~> 3.1)
+      nokogiri (>= 1.18.4)
       parallel
       ruby-progressbar
       unf
@@ -167,17 +168,7 @@ GEM
     minitest (5.25.5)
     multi_xml (0.6.0)
     mutex_m (0.3.0)
-    nokogiri (1.17.2-aarch64-linux)
-      racc (~> 1.4)
-    nokogiri (1.17.2-arm-linux)
-      racc (~> 1.4)
-    nokogiri (1.17.2-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.17.2-x86-linux)
-      racc (~> 1.4)
-    nokogiri (1.17.2-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.17.2-x86_64-linux)
+    nokogiri (1.18.7-arm64-darwin)
       racc (~> 1.4)
     observer (0.1.2)
     ostruct (0.6.1)

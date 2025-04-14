@@ -10,6 +10,7 @@ gem 'middleman-s3_sync', path: '~/dev/fredjean/middleman-s3_sync'
 
 gem 'middleman-dotenv'
 gem 'middleman-minify-html'
+gem 'middleman-livereload'
 
 # For feed.xml.builder
 gem 'auto_excerpt'

@@ -57,7 +57,6 @@ helpers TweetHelpers
 
 activate :directory_indexes
 activate :asset_hash
-set :relative_links, true
 
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes

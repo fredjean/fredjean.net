@@ -1,0 +1,13 @@
+---
+
+title: "I'm Back!"
+date: 2025-04-13 19:49 -0600
+tags:
+
+---
+
+A whole lot has happened since I last wrote here. I've been busy with work, family, hobbies,and personal projects. I've also dealt with some personal issues and challenges that have shaped my perspective and priorities. I've learned a lot about myself and the world around me, and I'm excited to share my experiences and insights with you.
+
+One big change is that I have joined Amazon Web Services (AWS). It has been a journey of growth, learning, highs and lows. I'm still there, working on projects that ensure that your serverless applications and LLM applications have plenty of compute, storage, and inference resources. I can't really go into details about my work, but I can say that it's been impactful.
+
+Look for new content as I share my experiences and insights with you.

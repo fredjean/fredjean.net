@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 
 gem 'middleman', '>= 4.5.0'
 gem 'middleman-blog'
-# gem 'middleman-s3_sync', git: 'https://github.com/fredjean/middleman-s3_sync.git', branch: 'master'
+gem 'middleman-s3_sync', git: 'https://github.com/fredjean/middleman-s3_sync.git', branch: 'master'
 gem 'middleman-syntax'
-gem 'middleman-s3_sync', path: '~/dev/fredjean/middleman-s3_sync'
+# gem 'middleman-s3_sync', path: '~/dev/fredjean/middleman-s3_sync'
 
 gem 'middleman-dotenv'
 gem 'middleman-livereload'

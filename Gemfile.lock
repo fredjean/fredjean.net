@@ -1,7 +1,7 @@
 PATH
   remote: ../middleman-s3_sync
   specs:
-    middleman-s3_sync (4.5.0)
+    middleman-s3_sync (4.6.1)
       ansi (~> 1.5.0)
       aws-sdk-cloudfront
       aws-sdk-s3

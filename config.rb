@@ -109,6 +109,8 @@ activate :s3_sync do |sync|
   }
   sync.cloudfront_invalidate = true
   sync.cloudfront_distribution_id = 'ERUO4ZK8VN1P2'
+  sync.cloudfront_invalidation_max_retries = 5
+  sync.cloudfront_invalidation_batch_delay = 5
 end
 
 caching_policy 'image/png', max_age: 12.months, expires: 12.months.from_now

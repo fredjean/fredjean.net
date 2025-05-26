@@ -1,5 +1,7 @@
-PATH
-  remote: ../middleman-s3_sync
+GIT
+  remote: https://github.com/fredjean/middleman-s3_sync.git
+  revision: c370a12644c863c8fbfcb41912208979e4156600
+  branch: master
   specs:
     middleman-s3_sync (4.6.1)
       ansi (~> 1.5.0)

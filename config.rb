@@ -56,17 +56,12 @@ require 'lib/tweet_helpers'
 helpers TweetHelpers
 
 activate :directory_indexes
+
+# Improving cacheability
 activate :asset_hash
 
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
-
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
 
 set :css_dir, 'stylesheets'
 
@@ -112,13 +107,9 @@ activate :s3_sync do |sync|
   sync.content_types = {
     "test.me" => "text/plain"
   }
+  sync.cloudfront_invalidate = true
+  sync.cloudfront_distribution_id = 'ERUO4ZK8VN1P2'
 end
-
-#activate :s3_redirect do |redirect|
-  #redirect.bucket = 'fredjean.net'
-  #redirect.region = 'us-east-1'
-  #redirect.after_build = false
-#end
 
 caching_policy 'image/png', max_age: 12.months, expires: 12.months.from_now
 caching_policy 'image/jpeg', max_age: 12.months, expires: 12.months.from_now

@@ -38,16 +38,11 @@ jobs:
         aws-region: us-east-1
         role-session-name: GitHubActions
     
-    - name: Build site
-      run: |
-        echo "Using $LANG encoding..."
-        bundle exec middleman build --clean
-    
-    - name: Deploy to S3
-      run: bundle exec middleman s3_sync
+    - name: Build and Deploy
+      run: bundle exec rake
     
     - name: Invalidate CloudFront
-      run: bundle exec middleman invalidate
+      run: bundle exec rake invalidate
 
   # Job for testing PRs without deploying
   test:
@@ -67,6 +62,4 @@ jobs:
         bundler-cache: true
     
     - name: Build site (test only)
-      run: |
-        echo "Using $LANG encoding..."
-        bundle exec middleman build --clean
+      run: bundle exec rake build

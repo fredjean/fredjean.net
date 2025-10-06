@@ -85,6 +85,7 @@ GEM
     fast_blank (1.0.1)
     fastimage (2.4.0)
     ffi (1.17.2-arm64-darwin)
+    ffi (1.17.2-x86_64-linux-gnu)
     haml (6.3.0)
       temple (>= 0.8.2)
       thor
@@ -174,6 +175,8 @@ GEM
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
     nokogiri (1.18.10-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
     observer (0.1.2)
     ostruct (0.6.3)
@@ -274,6 +277,7 @@ GEM
 
 PLATFORMS
   arm64-darwin
+  x86_64-linux
 
 DEPENDENCIES
   auto_excerpt

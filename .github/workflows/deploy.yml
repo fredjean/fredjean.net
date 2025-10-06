@@ -1,0 +1,72 @@
+name: Deploy Blog
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  # Set the default locale to avoid encoding issues
+  LANG: en_US.UTF-8
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    # Only deploy on master branch pushes, not PRs
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    
+    permissions:
+      id-token: write   # This is required for requesting the JWT
+      contents: read    # This is required for actions/checkout
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.4.2'
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+        aws-region: us-east-1
+        role-session-name: GitHubActions
+    
+    - name: Build site
+      run: |
+        echo "Using $LANG encoding..."
+        bundle exec middleman build --clean
+    
+    - name: Deploy to S3
+      run: bundle exec middleman s3_sync
+    
+    - name: Invalidate CloudFront
+      run: bundle exec middleman invalidate
+
+  # Job for testing PRs without deploying
+  test:
+    runs-on: ubuntu-latest
+    
+    # Only run on PRs
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.4.2'
+        bundler-cache: true
+    
+    - name: Build site (test only)
+      run: |
+        echo "Using $LANG encoding..."
+        bundle exec middleman build --clean

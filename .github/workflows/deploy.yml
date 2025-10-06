@@ -2,9 +2,9 @@ name: Deploy Blog
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 env:
   # Set the default locale to avoid encoding issues
@@ -13,53 +13,50 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     # Only deploy on master branch pushes, not PRs
     if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-    
+
     permissions:
-      id-token: write   # This is required for requesting the JWT
-      contents: read    # This is required for actions/checkout
-    
+      id-token: write # This is required for requesting the JWT
+      contents: read # This is required for actions/checkout
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '3.4.2'
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v4
-      with:
-        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-        aws-region: us-east-1
-        role-session-name: GitHubActions
-    
-    - name: Build and Deploy
-      run: bundle exec rake
-    
-    - name: Invalidate CloudFront
-      run: bundle exec rake invalidate
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4.2"
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+          role-session-name: GitHubActions
+
+      - name: Build and Deploy
+        run: bundle exec rake
 
   # Job for testing PRs without deploying
   test:
     runs-on: ubuntu-latest
-    
+
     # Only run on PRs
     if: github.event_name == 'pull_request'
-    
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '3.4.2'
-        bundler-cache: true
-    
-    - name: Build site (test only)
-      run: bundle exec rake build
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4.2"
+          bundler-cache: true
+
+      - name: Build site (test only)
+        run: bundle exec rake build

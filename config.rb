@@ -6,8 +6,6 @@
 # First: gem install susy
 require 'susy'
 require 'uglifier'
-require 'sprockets'
-require 'sprockets/erb_processor'
 require 'active_support/core_ext/integer/time'
 require 'active_support/core_ext/numeric/time'
 require 'active_support/core_ext/date/calculations'
@@ -60,8 +58,8 @@ helpers TweetHelpers
 
 activate :directory_indexes
 
-# Sprockets for JavaScript asset pipeline (CSS handled by SCSS directly)
-activate :sprockets
+# JavaScript is now handled directly without Sprockets
+# contact-form.js content is copied into all.js
 
 # Improving cacheability
 activate :asset_hash
@@ -74,6 +72,9 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+
+# Configure Sass to compile and compress CSS
+set :sass, style: :compressed
 
 page '/404.html'
 

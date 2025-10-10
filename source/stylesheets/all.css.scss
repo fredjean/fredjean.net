@@ -196,6 +196,50 @@ sidebar {
       margin-bottom: 10px;
       border-radius: 3px;
       border-width: 1px;
+      transition: border-color 0.3s ease;
+    }
+
+    input.field-error, textarea.field-error {
+      border-color: #d9534f;
+      border-width: 2px;
+      background-color: #fff5f5;
+    }
+
+    button[type="submit"] {
+      background-color: #5cb85c;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      
+      &:hover:not(:disabled) {
+        background-color: #4cae4c;
+      }
+      
+      &:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+    }
+
+    .form-message {
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      line-height: 1.5;
+      
+      &.success {
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: #155724;
+      }
+      
+      &.error {
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: #721c24;
+      }
     }
 
     padding-bottom: 4.5px;

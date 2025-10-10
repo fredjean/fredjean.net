@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        form {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        input, textarea, button {
+            width: 100%;
+            display: block;
+            line-height: 30px;
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease;
+        }
+        
+        input.field-error, textarea.field-error {
+            border-color: #d9534f;
+            border-width: 2px;
+            background-color: #fff5f5;
+        }
+        
+        button[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        button[type="submit"]:hover:not(:disabled) {
+            background-color: #4cae4c;
+        }
+        
+        button[type="submit"]:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        .form-message {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .form-message.success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .form-message.error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Form Test</h1>
+    <p>Test the contact form with the new Lambda backend.</p>
+    
+    <form id="contact" accept-charset="UTF-8" action="https://fredjean.net/rest/contact" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name" />
+        <input type="email" name="email" placeholder="Your Email Address" required aria-label="Your Email Address" />
+        <input type="tel" name="phone" placeholder="Your Phone Number" required aria-label="Your Phone Number" />
+        <textarea rows="10" name="message" placeholder="How can I help you?" required aria-label="Your Message"></textarea>
+        <button type="submit">Ask Me!</button>
+    </form>
+
+    <script>
+        $("#contact").submit(function (event) {
+            event.preventDefault();
+            var form = $(this);
+            var submitButton = form.find('button[type="submit"]');
+            var originalButtonText = submitButton.text();
+            
+            // Disable submit button and show loading state
+            submitButton.prop('disabled', true).text('Sending...');
+            
+            // Remove any existing error/success messages
+            form.find('.form-message').remove();
+            form.find('.field-error').removeClass('field-error');
+            
+            $.ajax({
+                url: "/rest/contact",
+                type: "POST",
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify(form.serializeArray().reduce(function(a, x) { 
+                    a[x.name] = x.value; 
+                    return a;
+                }, {})),
+                success: function (response) {
+                    // New Lambda returns {message, success} on success
+                    if (response.success && response.message) {
+                        // Clear form on success
+                        form[0].reset();
+                        
+                        // Show success message
+                        form.prepend(
+                            '<div class="form-message success">' +
+                            response.message +
+                            '</div>'
+                        );
+                    } else {
+                        // Unexpected response format
+                        showError('Unexpected response from server. Please try again.');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    var errorMessage = 'An error occurred. Please try again later.';
+                    var errorField = null;
+                    
+                    // Try to parse error response
+                    if (xhr.responseJSON) {
+                        // New Lambda returns {error, field} on validation errors
+                        if (xhr.responseJSON.error) {
+                            errorMessage = xhr.responseJSON.error;
+                            errorField = xhr.responseJSON.field;
+                        }
+                    }
+                    
+                    showError(errorMessage, errorField);
+                },
+                complete: function() {
+                    // Re-enable submit button
+                    submitButton.prop('disabled', false).text(originalButtonText);
+                }
+            });
+            
+            function showError(message, field) {
+                // Show error message
+                form.prepend(
+                    '<div class="form-message error">' +
+                    message +
+                    '</div>'
+                );
+                
+                // Highlight the problematic field if specified
+                if (field) {
+                    form.find('[name="' + field + '"]').addClass('field-error');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

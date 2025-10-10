@@ -5,6 +5,7 @@
 # Susy grids in Compass
 # First: gem install susy
 require 'susy'
+require 'uglifier'
 require 'active_support/core_ext/integer/time'
 require 'active_support/core_ext/numeric/time'
 require 'active_support/core_ext/date/calculations'
@@ -77,7 +78,7 @@ configure :build do
   activate :minify_css
 
   # Minify Javascript on build
-  activate :minify_javascript
+  activate :minify_javascript, compressor: -> { Uglifier.new(harmony: true) }
   activate :minify_html
   activate :gzip
 end

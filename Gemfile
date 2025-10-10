@@ -12,6 +12,8 @@ gem 'middleman-syntax'
 gem 'middleman-dotenv'
 gem 'middleman-livereload'
 gem 'middleman-minify-html'
+gem 'liquid'
+gem 'slim'
 
 # For feed.xml.builder
 gem 'auto_excerpt'

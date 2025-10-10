@@ -6,6 +6,8 @@
 # First: gem install susy
 require 'susy'
 require 'uglifier'
+require 'sprockets'
+require 'sprockets/erb_processor'
 require 'active_support/core_ext/integer/time'
 require 'active_support/core_ext/numeric/time'
 require 'active_support/core_ext/date/calculations'
@@ -58,6 +60,9 @@ helpers TweetHelpers
 
 activate :directory_indexes
 
+# Sprockets for JavaScript asset pipeline (CSS handled by SCSS directly)
+activate :sprockets
+
 # Improving cacheability
 activate :asset_hash
 
@@ -75,7 +80,7 @@ page '/404.html'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  activate :minify_css
+  # activate :minify_css  # Temporarily disabled to test
 
   # Minify Javascript on build
   activate :minify_javascript, compressor: -> { Uglifier.new(harmony: true) }

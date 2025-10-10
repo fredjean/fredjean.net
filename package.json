@@ -1,0 +1,14 @@
+{
+  "name": "fredjean-net",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "fredjean.net website",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.9",
+    "happy-dom": "^15.11.7"
+  }
+}

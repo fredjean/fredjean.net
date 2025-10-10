@@ -80,7 +80,8 @@ page '/404.html'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css  # Temporarily disabled to test
+  # Note: minify_css disabled due to conflict with github.css.scss import
+  # activate :minify_css
 
   # Minify Javascript on build
   activate :minify_javascript, compressor: -> { Uglifier.new(harmony: true) }
@@ -112,7 +113,9 @@ activate :s3_sync do |sync|
   sync.prefer_gzip = true
   sync.version_bucket = true
   sync.content_types = {
-    "test.me" => "text/plain"
+    "test.me" => "text/plain",
+    ".css" => "text/css",
+    ".js" => "application/javascript"
   }
   sync.cloudfront_invalidate = true
   sync.cloudfront_distribution_id = 'E2X56J66W6KC7E'

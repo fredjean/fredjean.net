@@ -8,7 +8,7 @@
         "s3:GetBucketLocation",
         "s3:GetBucketVersioning"
       ],
-      "Resource": "arn:aws:s3:::fredjean.net"
+      "Resource": "arn:aws:s3:::fredjean.net-website"
     },
     {
       "Effect": "Allow",
@@ -19,7 +19,7 @@
         "s3:PutObjectAcl",
         "s3:DeleteObject"
       ],
-      "Resource": "arn:aws:s3:::fredjean.net/*"
+      "Resource": "arn:aws:s3:::fredjean.net-website/*"
     },
     {
       "Effect": "Allow",
@@ -28,7 +28,7 @@
         "cloudfront:GetInvalidation",
         "cloudfront:ListInvalidations"
       ],
-      "Resource": "arn:aws:cloudfront::*:distribution/ERUO4ZK8VN1P2"
+      "Resource": "arn:aws:cloudfront::*:distribution/E2X56J66W6KC7E"
     }
   ]
 }

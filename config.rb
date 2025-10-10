@@ -100,7 +100,7 @@ end
 page "/feed.xml", :layout => false
 
 activate :s3_sync do |sync|
-  sync.bucket = 'fredjean.net'
+  sync.bucket = 'fredjean.net-website'
   sync.region = 'us-east-1'
   sync.prefer_gzip = true
   sync.version_bucket = true
@@ -108,7 +108,7 @@ activate :s3_sync do |sync|
     "test.me" => "text/plain"
   }
   sync.cloudfront_invalidate = true
-  sync.cloudfront_distribution_id = 'ERUO4ZK8VN1P2'
+  sync.cloudfront_distribution_id = 'E2X56J66W6KC7E'
   sync.cloudfront_invalidation_max_retries = 5
   sync.cloudfront_invalidation_batch_delay = 5
 end

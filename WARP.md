@@ -69,7 +69,7 @@ source/
 - **Pagination**: Enabled with 10 posts per page
 - **Markdown engine**: Redcarpet with fenced code blocks, autolink, and smartypants
 - **Asset optimization**: CSS/JS minification, asset hashing, gzip compression
-- **Deployment**: S3 bucket 'fredjean.net' in us-east-1 with CloudFront distribution
+- **Deployment**: S3 bucket 'fredjean.net-website' in us-east-1 with CloudFront distribution
 
 ### Custom Helpers and Extensions
 - `TweetHelpers` module in `lib/tweet_helpers.rb` for embedding tweets via Twitter oEmbed API

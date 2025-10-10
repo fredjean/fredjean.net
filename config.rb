@@ -102,6 +102,7 @@ page "/feed.xml", :layout => false
 activate :s3_sync do |sync|
   sync.bucket = 'fredjean.net-website'
   sync.region = 'us-east-1'
+  sync.acl = '' # Bucket has ACLs disabled, using OAC for CloudFront
   sync.prefer_gzip = true
   sync.version_bucket = true
   sync.content_types = {

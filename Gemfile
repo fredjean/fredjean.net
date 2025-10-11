@@ -21,7 +21,6 @@ gem 'builder', '>= 3.0.0'
 gem 'httparty'
 gem 'rake'
 gem 'redcarpet'
-gem 'susy'
 
 gem 'solargraph'
 

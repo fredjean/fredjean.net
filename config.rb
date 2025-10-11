@@ -2,9 +2,6 @@
 # Compass
 ###
 
-# Susy grids in Compass
-# First: gem install susy
-require 'susy'
 require 'uglifier'
 require 'active_support/core_ext/integer/time'
 require 'active_support/core_ext/numeric/time'

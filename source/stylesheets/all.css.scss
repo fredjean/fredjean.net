@@ -1,21 +1,11 @@
 @charset "utf-8";
 @import 'normalize.css';
-@import 'susy';
 @import 'github.css';
 
-/* Changing Susy default global settings */
-$susy: (
-  /* Tells Susy to use 12 columns */
-  columns: 12,
-  /* Tells Susy that the container has a max-width of 1120px */
-  container: 968px,
-  /* Tells Susy to use border-box */
-  global-box-sizing: border-box
-  );
-$container-style: magic;
-
-/* Makes border-box properties */
-@include border-box-sizing;
+/* Manual box-sizing reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 body {
   font-family: sans-serif;
@@ -23,25 +13,19 @@ body {
 }
 
 .page {
-  @include container;
+  max-width: 968px;
+  margin: 0 auto;
   background-color: rgba(255,255,255,0.80);
-  top: 0;
-  right: auto;
-  left: auto;
 }
 
 sidebar {
   @media(min-width: 768px) {
-    padding-left: 0.25em;
     position: fixed;
+    width: 250px;
+    padding-left: 0.25em;
   }
 
-
   .nav-inner {
-    @media(min-width: 768px) {
-      @include container;
-    }
-
     @media(max-width: 767px) {
       background-color: rgba(220, 220, 220, 1);
       padding-bottom: 20px;
@@ -56,16 +40,8 @@ sidebar {
     }
 
     padding-top: 55px;
-    &.byline {
-      @media(min-width: 768px) {
-        top: 30;
-      }
-    }
 
     ul {
-      @media(min-width: 768px) {
-        @include span(4);
-      }
       list-style-type: none;
       padding: 0;
       margin: 0;
@@ -110,9 +86,7 @@ sidebar {
 
 .content {
   @media(min-width: 768px) {
-    @include pre(4);
-    @include span(8 of 12);
-    float: none !important;
+    margin-left: 33.33333%;
   }
 
   position: relative;
@@ -248,28 +222,37 @@ sidebar {
 }
 
 footer {
-  @include container;
+  max-width: 968px;
+  margin: 0 auto;
+  
   @media(min-width: 768px) {
-    @include pre(4);
-    @include span(8 of 12);
+    margin-left: 33.33333%;
   }
+  
   border-top: 1px solid #ccc;
   background-color: white;
   line-height: 125%;
   height: 100%;
   font-size: 14px;
-  display: block;
   position: relative;
   z-index: 99;
 
-  .recent {
+  > div {
     @media(min-width: 768px) {
-      @include span(6);
+      display: flex;
+      gap: 2%;
     }
   }
+
+  .recent {
+    @media(min-width: 768px) {
+      flex: 2;
+    }
+  }
+  
   .by_year {
     @media(min-width: 768px) {
-      @include span(3 last);
+      flex: 1;
     }
   }
 }

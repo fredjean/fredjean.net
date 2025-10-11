@@ -229,7 +229,6 @@ GEM
       parser (>= 3.3.7.2)
       prism (~> 1.4)
     ruby-progressbar (1.13.0)
-    sass (3.4.25)
     sassc (2.4.0)
       ffi (~> 1.9)
     securerandom (0.4.1)
@@ -259,8 +258,6 @@ GEM
       yard-activesupport-concern (~> 0.0)
       yard-solargraph (~> 0.1)
     strscan (3.1.5)
-    susy (2.2.14)
-      sass (>= 3.3.0, < 3.5)
     temple (0.10.4)
     thor (1.4.0)
     tilt (2.6.1)
@@ -303,7 +300,6 @@ DEPENDENCIES
   rubocop
   slim
   solargraph
-  susy
 
 RUBY VERSION
    ruby 3.4.2p28

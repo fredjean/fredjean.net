@@ -13,7 +13,7 @@ body {
 }
 
 .page {
-  max-width: 968px;
+  max-width: 1600px;
   margin: 0 auto;
   background-color: rgba(255,255,255,0.80);
 }
@@ -86,7 +86,7 @@ sidebar {
 
 .content {
   @media(min-width: 768px) {
-    margin-left: 33.33333%;
+    margin-left: 280px;
   }
 
   position: relative;
@@ -222,11 +222,11 @@ sidebar {
 }
 
 footer {
-  max-width: 968px;
+  max-width: 1600px;
   margin: 0 auto;
   
   @media(min-width: 768px) {
-    margin-left: 33.33333%;
+    margin-left: 280px;
   }
   
   border-top: 1px solid #ccc;

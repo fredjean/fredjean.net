@@ -18,13 +18,13 @@ This release locks the `map` dependency to version 6.6.0 to ensure stable instal
 
 To upgrade to the latest version, update your Gemfile:
 
-```ruby path=null start=null
+```ruby
 gem 'middleman-s3_sync', '~> 4.6.3'
 ```
 
 Then run:
 
-```bash path=null start=null
+```bash
 bundle update middleman-s3_sync
 ```
 

@@ -1,13 +1,12 @@
 GIT
   remote: https://github.com/fredjean/middleman-s3_sync.git
-  revision: 0c8ab28ee470fc238bbc3df50f090d9c7ffde528
+  revision: 6114d9cfcce3de46dc91a93b5080efc51befc0f4
   branch: master
   specs:
-    middleman-s3_sync (4.6.3)
+    middleman-s3_sync (4.6.4)
       ansi (~> 1.5.0)
       aws-sdk-cloudfront
       aws-sdk-s3 (>= 1.187.0)
-      map (= 6.6.0)
       middleman-cli
       middleman-core
       mime-types (~> 3.1)
@@ -116,7 +115,6 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
-    map (6.6.0)
     memoist (0.16.2)
     middleman (4.6.2)
       middleman-cli (= 4.6.2)

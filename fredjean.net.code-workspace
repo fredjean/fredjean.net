@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../middleman-s3_sync"
+		}
+	],
+	"settings": {}
+}

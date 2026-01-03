@@ -30,3 +30,6 @@
 
 # Ignore binstubs
 /bin
+
+# Ignore node modules
+node_modules

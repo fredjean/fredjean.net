@@ -16,3 +16,11 @@ run = [
   "bundle install",
   "mise run binstubs"
 ]
+
+[tasks.serve]
+description = "Start the middleman development server"
+run = "bundle exec middleman server"
+
+[tasks.publish]
+description = "Build and publish the blog"
+run = "rake"

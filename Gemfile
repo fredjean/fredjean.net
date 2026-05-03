@@ -5,7 +5,7 @@ ruby '3.4.2'
 
 gem 'middleman', '>= 4.5.0'
 gem 'middleman-blog'
-gem 'middleman-s3_sync', '~> 4.6'
+gem 'middleman-s3_sync', '~> 4.8'
 gem 'middleman-syntax'
 
 gem 'middleman-dotenv'

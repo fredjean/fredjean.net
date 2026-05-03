@@ -121,9 +121,9 @@ activate :s3_sync do |sync|
   sync.cloudfront_invalidation_batch_delay = 5
 end
 
-caching_policy 'image/png', max_age: 12.months, expires: 12.months.from_now
-caching_policy 'image/jpeg', max_age: 12.months, expires: 12.months.from_now
-caching_policy 'text/css', max_age: 12.months, expires: 12.months.from_now
-caching_policy 'application/javascript', max_age: 12.months, expires: 12.months.from_now
+caching_policy 'image/png', max_age: 12.months, expires: 12.months.from_now, immutable: true
+caching_policy 'image/jpeg', max_age: 12.months, expires: 12.months.from_now, immutable: true
+caching_policy 'text/css', max_age: 12.months, expires: 12.months.from_now, immutable: true
+caching_policy 'application/javascript', max_age: 12.months, expires: 12.months.from_now, immutable: true
 
 activate :syntax, line_numbers: true

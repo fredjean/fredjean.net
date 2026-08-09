@@ -33,3 +33,6 @@
 
 # Ignore node modules
 node_modules
+
+# Ignore design folder
+/design

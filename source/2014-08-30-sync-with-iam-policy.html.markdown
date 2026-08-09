@@ -1,7 +1,7 @@
 ---
 title: S3_Sync with AWS IAM Users and Policies
 date: 2014-08-30 16:47 MDT
-tags:
+tags: aws, middleman, ruby, s3
 ---
 
 You can certainly use your AWS root account's keys to sync content up to

@@ -1,7 +1,7 @@
 ---
 title: middleman-s3_sync 3.0.12 released
 date: 2013-05-16 10:09 MDT
-tags:
+tags: middleman, ruby, s3
 ---
 I pushed a new release of
 [middleman-s3_sync](https://github.com/fredjean/middleman-s3_sync) to

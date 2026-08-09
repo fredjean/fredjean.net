@@ -2,6 +2,7 @@
 title: "middleman-s3_sync 4.6.4 released"
 date: 2026-01-03 10:00 -0700
 tags: middleman, ruby, s3
+summary: "Replaces the unmaintained map gem with a small native IndifferentHash, dropping an external dependency with no breaking changes."
 ---
 
 I've just released version 4.6.4 of [middleman-s3_sync](https://github.com/fredjean/middleman-s3_sync), a gem that synchronizes Middleman-built websites to Amazon S3.

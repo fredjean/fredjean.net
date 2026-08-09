@@ -1,31 +1,91 @@
+<%
+@active = nil
+@home = false
+@dateline = [
+  article_kicker(current_article),
+  current_article.date.strftime('%A, %B %-d, %Y'),
+  'Frederic Jean',
+  reading_time(current_article)
+]
+is_release_note = release_note?(current_article)
+%>
 <% wrap_layout :layout do %>
-  <article>
-    <h1><%= current_page.data.title %></h1>
-    <%= yield %>
-    <%= partial "partials/byline", locals: { article: current_article } %>
-  </article>
-  <aside>
-    <div id="disqus_thread"></div>
-    <script>
-/**
-* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
- * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
- */
-    /*
-       var disqus_config = function () {
-       this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-       };
-     */
-    (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
+  <div class="article-head">
+    <h1><%= current_article.title %></h1>
+    <p class="standfirst"><%= standfirst(current_article) %></p>
+  </div>
+  <hr class="rule-cut">
 
-      s.src = '//fredjean-net.disqus.com/embed.js';
+  <div class="with-rail with-rail--article">
+    <article class="prose">
+      <%= inject_code_captions(yield) %>
 
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-  </aside>
+      <hr class="rule-cut" style="margin: 40px 0 20px;">
+      <% if current_article.tags.any? %>
+        <div class="filed-under">
+          <span class="filed-under-label">Filed under</span>
+          <% current_article.tags.each do |tag| %>
+            <a href="<%= tag_path(tag) %>" class="tag tag-accent"><%= tag %></a>
+          <% end %>
+        </div>
+      <% end %>
+
+      <section class="comments">
+        <h2>Comments</h2>
+        <p class="lede">Powered by Disqus.</p>
+        <div id="disqus_thread"></div>
+        <script>
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//fredjean-net.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      </section>
+    </article>
+
+    <aside class="rail">
+      <%= partial 'partials/byline', locals: {
+        size: 72,
+        blurb: 'Frederic Jean. Scheduling for intermodal traffic at BNSF, nine years at AWS before that. Maintains this gem.'.html_safe,
+        link: '/about/'
+      } %>
+
+      <% if is_release_note %>
+        <div>
+          <p class="rail-label">The release series</p>
+          <div class="link-list">
+            <% release_series(current_article).each do |article| %>
+              <% if article.slug == current_article.slug %>
+                <span class="current"><%= release_title(article) %></span>
+              <% else %>
+                <a class="pl" href="<%= article.url %>"><%= release_title(article) %></a>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <div>
+          <p class="rail-label">From the back issues</p>
+          <div class="link-list">
+            <% back_issues.reject { |a| a.slug == current_article.slug }.each do |article| %>
+              <a class="pl" href="<%= article.url %>"><span class="title"><%= article.title %></span> <span class="year"><%= article.date.year %></span></a>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </aside>
+  </div>
+
+  <hr class="rule-cut">
+  <nav class="article-nav">
+    <% if current_article.article_previous %>
+      <a href="<%= current_article.article_previous.url %>">&larr; <%= current_article.article_previous.title %></a>
+    <% else %>
+      <span></span>
+    <% end %>
+    <a href="/">Back to the front page</a>
+  </nav>
 <% end %>

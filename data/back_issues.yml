@@ -1,0 +1,11 @@
+picks:
+  - toward-idempotency
+  - when-you-make-a-big-mistake
+  - signed-json-web-tokens
+  - release-earlier-release-less-release-often
+
+groups:
+  "Ruby & gems": [ruby, middleman, jruby, s3]
+  "Identity & tokens": [jwt, oauth, identity]
+  "Infrastructure": [aws, kubernetes, docker, git]
+  "Talks & user groups": [speaking, presentation]

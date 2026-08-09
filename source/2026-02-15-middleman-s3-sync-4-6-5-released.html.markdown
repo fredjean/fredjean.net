@@ -3,6 +3,7 @@
 title: "middleman-s3_sync 4.6.5 released"
 date: 2026-02-15 16:29 -0700
 tags: middleman, ruby, s3
+summary: "Thread-safe CloudFront invalidation tracking, batched S3 deletes, and streaming uploads — efficiency and stability work for larger syncs."
 
 ---
 

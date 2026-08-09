@@ -53,6 +53,9 @@ end
 require 'lib/tweet_helpers'
 helpers TweetHelpers
 
+require 'lib/blog_helpers'
+helpers BlogHelpers
+
 activate :directory_indexes
 
 # JavaScript is now handled directly without Sprockets
@@ -69,6 +72,8 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+
+set :fonts_dir, 'fonts'
 
 # Configure Sass to compile and compress CSS
 set :sass, style: :compressed
@@ -125,5 +130,6 @@ caching_policy 'image/png', max_age: 12.months, expires: 12.months.from_now, imm
 caching_policy 'image/jpeg', max_age: 12.months, expires: 12.months.from_now, immutable: true
 caching_policy 'text/css', max_age: 12.months, expires: 12.months.from_now, immutable: true
 caching_policy 'application/javascript', max_age: 12.months, expires: 12.months.from_now, immutable: true
+caching_policy 'font/woff2', max_age: 12.months, expires: 12.months.from_now, immutable: true
 
-activate :syntax, line_numbers: true
+activate :syntax

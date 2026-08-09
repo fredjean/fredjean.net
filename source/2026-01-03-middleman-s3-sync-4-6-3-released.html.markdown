@@ -2,6 +2,7 @@
 title: "middleman-s3_sync 4.6.3 released"
 date: 2026-01-03 09:34 -0700
 tags: middleman, ruby, s3
+summary: "A maintenance release locking the map gem dependency to 6.6.0 after an unexpected breaking release upstream."
 ---
 
 I've just released version 4.6.3 of [middleman-s3_sync](https://github.com/fredjean/middleman-s3_sync), a gem that synchronizes Middleman-built websites to Amazon S3.

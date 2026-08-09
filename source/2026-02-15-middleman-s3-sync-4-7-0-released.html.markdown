@@ -3,6 +3,7 @@
 title: "middleman-s3_sync 4.7.0 released"
 date: 2026-02-15 21:49 -0700
 tags: middleman, ruby, s3
+summary: "Reliability work on CloudFront invalidations, plus conveniences in the caching policy DSL that make it easier to reason about what gets re-uploaded."
 
 ---
 

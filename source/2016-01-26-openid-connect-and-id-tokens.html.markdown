@@ -1,7 +1,7 @@
 ---
 title: OpenID Connect and ID Tokens
 date: 2016-01-26 09:25 MST
-tags:
+tags: oauth, identity
 ---
 
 OAuth2 is fundamentally an authorization protocol. It is not meant to be

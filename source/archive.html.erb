@@ -1,0 +1,66 @@
+---
+title: The archive
+pageable: true
+per_page: 12
+---
+<%
+@active = :archive
+@home = false
+first_year = first_article_year
+last_year = blog.articles.map(&:date).max.year
+years_span = last_year - first_year
+volumes = blog.articles.map { |a| a.date.year }.uniq.size
+@dateline = [
+  'The archive',
+  "#{first_year} &mdash; #{last_year}".html_safe,
+  "#{blog.articles.size} articles",
+  "Bound in #{volumes} volumes"
+]
+grouped = page_articles.group_by { |a| a.date.year }
+%>
+<div class="page-head">
+  <h1><%= years_span %> years, <%= blog.articles.size %> articles</h1>
+  <p class="standfirst-plain">Java and JUG talks, then Ruby and Groovy, then tokens and Kubernetes, then a long silence, then gems again. Browse by year or by subject.</p>
+</div>
+
+<div class="with-rail">
+  <div>
+    <% grouped.each do |year, articles| %>
+      <p class="rail-label" style="margin: 40px 0 20px;"><%= year %></p>
+      <div class="row-list">
+        <% articles.each do |article| %>
+          <a class="pl row" href="<%= article.url %>">
+            <span class="row-date"><%= article.date.strftime('%b %-d') %></span>
+            <span class="row-title"><%= article.title %></span>
+            <span class="row-subjects"><%= article.tags.any? ? article.tags.join(' &middot; ').html_safe : '&mdash;'.html_safe %></span>
+          </a>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= partial 'partials/pager', locals: { prev_label: 'Newer', next_label: 'Earlier articles &rarr;'.html_safe } %>
+  </div>
+
+  <aside style="display: flex; flex-direction: column; gap: 36px;">
+    <div>
+      <p class="rail-label">By volume</p>
+      <div>
+        <% by_year_counts.each do |y, count| %>
+          <p class="leader-row">
+            <a class="pl leader-row-strong" href="<%= blog_year_path(y) %>"><%= y %></a>
+            <span class="leader"></span>
+            <span class="count"><%= count %></span>
+          </p>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <p class="rail-label">By subject</p>
+      <div class="tag-cloud">
+        <% blog.tags.keys.sort_by { |t| -blog.tags[t].size }.each do |t| %>
+          <a href="<%= tag_path(t) %>" class="tag tag-accent"><%= t %></a>
+        <% end %>
+      </div>
+    </div>
+  </aside>
+</div>

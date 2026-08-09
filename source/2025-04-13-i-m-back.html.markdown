@@ -3,6 +3,7 @@
 title: "I'm Back!"
 date: 2025-04-13 19:49 -0600
 tags:
+summary: "Back after a long silence — nearly nine years at AWS, new priorities, and more writing to come."
 
 ---
 

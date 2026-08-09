@@ -1,10 +1,7 @@
 ---
 title: Clients In OAuth2 and OpenID Connect
 date: 2016-02-23 09:25 MST
-tags:
-  - oauth2
-  - openidconnect
-  - auth
+tags: oauth, identity, oauth2, openidconnect, auth
 ---
 
 OAuth2 and OpenID Connect both have the notion of a client. In this

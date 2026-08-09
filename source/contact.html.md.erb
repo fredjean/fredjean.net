@@ -1,0 +1,44 @@
+---
+title: Contact
+---
+<%
+@active = :contact
+@home = false
+@dateline = ['Correspondence', 'I read everything', 'Denver, Colorado']
+%>
+<div class="with-rail with-rail--contact">
+  <div>
+    <h1 class="h1-display" style="margin-bottom: 22px; max-width: 14ch;">Get in touch</h1>
+    <div class="prose">
+      <p style="max-width: 52ch;">If something here was useful, wrong, or worth arguing about, I would like to hear it. Corrections on old posts are welcome &mdash; some of them are nearly twenty years old.</p>
+      <p style="max-width: 52ch;">Bug reports and pull requests for <a href="https://github.com/fredjean/middleman-s3_sync">middleman-s3_sync</a> are better filed on GitHub, where they stay with the code.</p>
+      <p style="max-width: 52ch;">I am not taking consulting work at the moment, but I still enjoy talking about service architecture, authentication in distributed systems, delivery pipelines and test automation.</p>
+    </div>
+    <p style="font-size: 15px; line-height: 25px; max-width: 52ch; margin: 0;" class="row-desc">You can also find me on <a href="https://www.linkedin.com/in/fredjean/">LinkedIn</a> and <a href="https://github.com/fredjean">GitHub</a>.</p>
+  </div>
+
+  <div>
+    <h2 style="font-size: 24px; line-height: 1.2; margin: 0 0 20px;">Send a note</h2>
+    <form id="contact" accept-charset="UTF-8" action="https://fredjean.net/rest/contact" method="POST" style="display: flex; flex-direction: column; gap: 16px; max-width: 440px;">
+      <div class="field">
+        <label for="c-name">Your name</label>
+        <input class="input" id="c-name" name="name" type="text" placeholder="Jane Developer" required aria-label="Your Name">
+      </div>
+      <div class="field">
+        <label for="c-email">Your email address</label>
+        <input class="input" id="c-email" name="email" type="email" placeholder="jane@example.com" required aria-label="Your Email Address">
+      </div>
+      <div class="field">
+        <label for="c-phone">Your phone number (optional)</label>
+        <input class="input" id="c-phone" name="phone" type="tel" placeholder="+1 303 555 0142" aria-label="Your Phone Number">
+      </div>
+      <div class="field">
+        <label for="c-msg">Your message</label>
+        <textarea class="input" id="c-msg" name="message" rows="6" placeholder="What is on your mind?" required aria-label="Your Message"></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -2,7 +2,7 @@
 title: Exporting Articles from Posterous to Middleman Blog
 date: 2013-04-28 09:52 MDT
 published: true
-tags:
+tags: middleman, ruby
 ---
 
 Posterous is about to shut down access to the web site. They do provide

@@ -1,4 +1,22 @@
-<h1>It looks like you are looking in the wrong bucket my friend...</h1>
-<%= image_tag('bucket.jpg') %>
-
-<p>Go back to the <a href="/">home page...</a></p>
+---
+title: Page Not Found
+---
+<%
+@active = nil
+@home = false
+@dateline = ['Stop press', 'Page not found', 'Error 404']
+%>
+<div class="with-rail with-rail--404">
+  <div>
+    <p class="error-num">404</p>
+    <h1 class="error-head">It looks like you are looking in the wrong bucket my friend&hellip;</h1>
+    <p class="prose" style="max-width: 48ch;">The page moved, or it never existed. The archive goes back to <%= first_article_year %>, so there is a decent chance what you want is still here.</p>
+    <div class="error-actions">
+      <a class="btn btn-primary" href="/">Back to the front page</a>
+      <a class="btn btn-secondary" href="/archive/">Browse the archive</a>
+    </div>
+  </div>
+  <figure>
+    <%= image_tag 'bucket.jpg', alt: '', style: 'width: 100%; height: 300px; object-fit: cover; border-radius: 2px;' %>
+  </figure>
+</div>

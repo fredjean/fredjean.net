@@ -3,6 +3,7 @@
 title: "middleman-s3_sync 4.8.0 released"
 date: 2026-05-03 16:00 -0600
 tags: middleman, ruby, s3
+summary: "Immutable caching directives for fingerprinted assets, and max-age finally winning the argument with Expires."
 
 ---
 

@@ -1,33 +1,215 @@
 ---
-pageable: true
 ---
-<h1>Archive for
-  <% case page_type
-     when 'day' %>
-    <%= Date.new(year, month, day).strftime('%b %e %Y') %>
-  <% when 'month' %>
-    <%= Date.new(year, month, 1).strftime('%b %Y') %>
-  <% when 'year' %>
-    <%= year %>
-  <% end %>
-</h1>
+<%
+@active = :archive
+@home = false
+month_names = %w[January February March April May June July August September October November December]
 
-<% if paginate %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
+case page_type
+when 'year'
+  all_years = blog.articles.map { |a| a.date.year }.uniq.sort
+  idx = all_years.index(year)
+  prev_year = idx && idx > 0 ? all_years[idx - 1] : nil
+  next_year = idx && idx < all_years.size - 1 ? all_years[idx + 1] : nil
+  vol = volume_for_year(year)
+  @dateline = [
+    'The archive',
+    year.to_s,
+    "#{page_articles.size} article#{'s' unless page_articles.size == 1}",
+    vol ? "Vol. #{vol}" : 'The founding year'
+  ]
 
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
-  <% end %>
-<% end %>
+when 'month'
+  month_name = month_names[month - 1]
+  prev_month_date = Date.new(year, month, 1) << 1
+  next_month_date = Date.new(year, month, 1) >> 1
+  prev_count = blog.articles.count { |a| a.date.year == prev_month_date.year && a.date.month == prev_month_date.month }
+  next_count = blog.articles.count { |a| a.date.year == next_month_date.year && a.date.month == next_month_date.month }
+  month_tags = page_articles.flat_map(&:tags).uniq.sort
+  @dateline = [
+    'The archive',
+    "#{month_name} #{year}",
+    "#{page_articles.size} article#{'s' unless page_articles.size == 1}",
+    link_to("The whole of #{year}", blog_year_path(year))
+  ]
 
-<ul>
-  <% page_articles.sort { |a, b| (a.date <=> b.date) != 0 ?  a.date <=> b.date : a.title <=> b.title }.each_with_index do |article, i| %>
-    <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-  <% end %>
-</ul>
+when 'day'
+  earliest = page_articles.min_by(&:date)
+  latest = page_articles.max_by(&:date)
+  prev_article = earliest.article_previous
+  next_article = latest.article_next
+  month_siblings = blog.articles.select { |a| a.date.year == year && a.date.month == month && a.date.day != day }
+  @dateline = [
+    'The archive',
+    Date.new(year, month, day).strftime('%A, %B %-d, %Y'),
+    "#{page_articles.size} article#{'s' unless page_articles.size == 1}",
+    link_to("The whole of #{month_names[month - 1]}", blog_month_path(year, month))
+  ]
+end
+%>
 
-<% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
-  <% end %>
+<% if page_type == 'year' %>
+  <div class="page-head">
+    <h1><%= year %></h1>
+    <p class="standfirst-plain"><%= page_articles.size %> article<%= 's' unless page_articles.size == 1 %> published in <%= year %>.</p>
+  </div>
+
+  <div class="with-rail">
+    <div>
+      <div class="row-list">
+        <% page_articles.sort_by(&:date).reverse.each do |article| %>
+          <a class="pl row" href="<%= article.url %>">
+            <span class="row-date"><%= article.date.strftime('%b %-d') %></span>
+            <span class="row-title"><%= article.title %></span>
+            <span class="row-subjects"><%= article.tags.any? ? article.tags.join(' &middot; ').html_safe : '&mdash;'.html_safe %></span>
+          </a>
+        <% end %>
+      </div>
+
+      <div class="pager">
+        <% if prev_year %>
+          <a href="<%= blog_year_path(prev_year) %>">&larr; <%= prev_year %></a>
+        <% else %>
+          <span class="muted">&larr; Earlier</span>
+        <% end %>
+        <% if next_year %>
+          <a href="<%= blog_year_path(next_year) %>"><%= next_year %> &rarr;</a>
+        <% else %>
+          <span class="muted">Later &rarr;</span>
+        <% end %>
+      </div>
+    </div>
+
+    <aside style="display: flex; flex-direction: column; gap: 36px;">
+      <div>
+        <p class="rail-label">By volume</p>
+        <div>
+          <% by_year_counts.each do |y, count| %>
+            <p class="leader-row">
+              <% if y == year %>
+                <span class="leader-row-strong is-current"><%= y %></span>
+              <% else %>
+                <a class="pl leader-row-strong" href="<%= blog_year_path(y) %>"><%= y %></a>
+              <% end %>
+              <span class="leader"></span>
+              <span class="count"><%= count %></span>
+            </p>
+          <% end %>
+        </div>
+      </div>
+      <div>
+        <p class="rail-label">By subject</p>
+        <div class="tag-cloud">
+          <% blog.tags.keys.sort_by { |t| -blog.tags[t].size }.each do |t| %>
+            <a href="<%= tag_path(t) %>" class="tag tag-accent"><%= t %></a>
+          <% end %>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+<% elsif page_type == 'month' %>
+  <div class="with-rail">
+    <div>
+      <h1 class="h1-display" style="margin-bottom: 12px;"><%= month_name %> <%= year %></h1>
+      <p class="standfirst-plain" style="margin-bottom: 28px;"><%= page_articles.size %> article<%= 's' unless page_articles.size == 1 %> published this month.</p>
+
+      <div class="row-list">
+        <% page_articles.sort_by(&:date).reverse.each do |article| %>
+          <a class="pl row" href="<%= article.url %>">
+            <span class="row-date"><%= article.date.strftime('%b %-d') %></span>
+            <span class="row-title"><%= article.title %></span>
+            <span class="row-subjects"><%= article.tags.any? ? article.tags.join(' &middot; ').html_safe : '&mdash;'.html_safe %></span>
+          </a>
+        <% end %>
+      </div>
+
+      <div class="pager">
+        <% if prev_count > 0 %>
+          <a href="<%= blog_month_path(prev_month_date.year, prev_month_date.month) %>">&larr; <%= month_names[prev_month_date.month - 1] %> <%= prev_month_date.year %></a>
+        <% else %>
+          <span class="muted"><%= month_names[prev_month_date.month - 1] %> <%= prev_month_date.year %> &mdash; nothing published</span>
+        <% end %>
+        <% if next_count > 0 %>
+          <a href="<%= blog_month_path(next_month_date.year, next_month_date.month) %>"><%= month_names[next_month_date.month - 1] %> <%= next_month_date.year %> &rarr;</a>
+        <% else %>
+          <span class="muted"><%= month_names[next_month_date.month - 1] %> <%= next_month_date.year %> &mdash; nothing published</span>
+        <% end %>
+      </div>
+    </div>
+
+    <aside style="display: flex; flex-direction: column; gap: 36px;">
+      <div>
+        <p class="rail-label"><%= year %>, month by month</p>
+        <div>
+          <% by_month_counts(year).each do |month_num, count| %>
+            <p class="leader-row<%= ' is-empty' if count.zero? %>">
+              <% if month_num == month %>
+                <span class="leader-row-strong is-current"><%= month_names[month_num - 1] %></span>
+              <% elsif count > 0 %>
+                <a class="pl leader-row-strong" href="<%= blog_month_path(year, month_num) %>"><%= month_names[month_num - 1] %></a>
+              <% else %>
+                <span><%= month_names[month_num - 1] %></span>
+              <% end %>
+              <span class="leader"></span>
+              <span class="<%= count.zero? ? '' : 'count' %>"><%= count.zero? ? '&mdash;'.html_safe : count %></span>
+            </p>
+          <% end %>
+        </div>
+      </div>
+      <div>
+        <p class="rail-label">Subjects this month</p>
+        <div class="tag-cloud">
+          <% month_tags.each do |t| %>
+            <a href="<%= tag_path(t) %>" class="tag tag-accent"><%= t %></a>
+          <% end %>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+<% elsif page_type == 'day' %>
+  <div class="with-rail">
+    <div>
+      <p class="page-kicker"><a href="/archive/">Archive</a> &middot; <a href="<%= blog_month_path(year, month) %>"><%= month_names[month - 1] %> <%= year %></a></p>
+      <h1 class="h1-display" style="margin-bottom: 12px;"><%= Date.new(year, month, day).strftime('%B %-d, %Y') %></h1>
+      <p class="standfirst-plain" style="margin-bottom: 28px;"><%= page_articles.size %> article<%= 's' unless page_articles.size == 1 %> published this day.</p>
+
+      <div class="row-list">
+        <% page_articles.sort_by(&:date).reverse.each do |article| %>
+          <a class="pl row row--full" href="<%= article.url %>">
+            <span class="row-title row-title--lg"><%= article.title %></span>
+            <span class="row-desc"><%= plain_excerpt(article, characters: 130) %></span>
+          </a>
+        <% end %>
+      </div>
+
+      <div class="pager">
+        <% if prev_article %>
+          <a href="<%= prev_article.url %>">&larr; <%= prev_article.date.strftime('%B %-d, %Y') %></a>
+        <% else %>
+          <span class="muted">&larr; Earlier</span>
+        <% end %>
+        <% if next_article %>
+          <a href="<%= next_article.url %>"><%= next_article.date.strftime('%B %-d, %Y') %> &rarr;</a>
+        <% else %>
+          <span class="muted">Later &rarr;</span>
+        <% end %>
+      </div>
+    </div>
+
+    <aside>
+      <p class="rail-label">Also in <%= month_names[month - 1] %> <%= year %></p>
+      <% if month_siblings.any? %>
+        <div class="link-list">
+          <% month_siblings.each do |article| %>
+            <a class="pl" href="<%= article.url %>"><span class="title"><%= article.title %></span></a>
+          <% end %>
+        </div>
+      <% else %>
+        <p style="font-size: 15px; line-height: 25px; margin: 0 0 16px;" class="row-desc">Nothing else was published this month.</p>
+      <% end %>
+      <p style="margin: 16px 0 0; font-size: 15px;"><a href="/archive/">Back to the archive &rarr;</a></p>
+    </aside>
+  </div>
 <% end %>

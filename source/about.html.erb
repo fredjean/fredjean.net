@@ -1,0 +1,61 @@
+---
+title: About
+---
+<%
+@active = :about
+@home = false
+@dateline = ['About the writer', 'Frederic Jean', 'Colorado', 'Writing here since 2007']
+%>
+<div class="with-rail with-rail--about">
+  <div>
+    <h1 class="h1-display" style="margin-bottom: 24px; max-width: 16ch;">Frederic Jean</h1>
+    <div class="prose">
+      <p>I work at BNSF on scheduling, mostly on intermodal traffic: getting more out of each railcar, and getting the right car under the cargo at hand. It is the same problem I have always worked on &mdash; capacity, demand and timing &mdash; with heavier equipment.</p>
+      <p>Before that I spent nearly nine years at AWS, on the systems that keep serverless and LLM workloads supplied with compute, storage and inference. And before that I ran my own practice out of Colorado: micro-service and service-based architecture, authentication and authorization in distributed environments, continuous delivery pipelines, test automation.</p>
+      <p>I have been writing here since March 2007 &mdash; through Java, JRuby, Groovy, user-group talks, tokens, Kubernetes, a long silence, and back to gems. The archive is intact, typos and all.</p>
+    </div>
+
+    <h2 style="font-size: 24px; line-height: 1.2; margin: 44px 0 14px;">What I work on</h2>
+    <ul class="prose" style="margin: 0; padding-left: 20px;">
+      <li>Architecting micro-services and service based architecture</li>
+      <li>Addressing authentication and authorization in distributed environments</li>
+      <li>Building continuous delivery pipelines</li>
+      <li>Automating tests</li>
+    </ul>
+
+    <h2 style="font-size: 24px; line-height: 1.2; margin: 44px 0 16px;">Open source</h2>
+    <div class="card-grid">
+      <div class="card">
+        <span class="card-kicker">Ruby gem</span>
+        <span class="card-title">middleman-s3_sync</span>
+        <p class="card-body">Synchronizes a Middleman build to S3 and invalidates CloudFront. Currently 4.8.0.</p>
+        <span class="card-meta">Maintained &middot; 2013&ndash;today</span>
+      </div>
+      <div class="card">
+        <span class="card-kicker">Ruby gem</span>
+        <span class="card-title">jruby-memcache-client</span>
+        <p class="card-body">Memcache client for JRuby, with support for multiple connection pools.</p>
+        <span class="card-meta">Archived &middot; 2009</span>
+      </div>
+    </div>
+    <p style="margin: 20px 0 0; font-size: 16px;"><a href="https://github.com/fredjean">See everything on GitHub &rarr;</a></p>
+  </div>
+
+  <aside style="display: flex; flex-direction: column; gap: 32px;">
+    <div class="halftone" style="width: 100%; aspect-ratio: 1;">
+      <%= image_tag 'avatar.png', alt: 'Frederic Jean', style: 'width: 100%; height: 100%; object-fit: cover;' %>
+    </div>
+    <div>
+      <p class="rail-label">Elsewhere</p>
+      <div style="display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 26px;">
+        <a href="https://github.com/fredjean">GitHub &mdash; github.com/fredjean</a>
+        <a href="https://www.linkedin.com/in/fredjean/" rel="author me">LinkedIn &mdash; in/fredjean</a>
+        <a href="/feed.xml">RSS feed</a>
+      </div>
+    </div>
+    <div>
+      <p class="rail-label">Disclaimer</p>
+      <p style="margin: 0; font-size: 14px; line-height: 23px;" class="row-desc">The opinions expressed here and elsewhere do not reflect the opinions of my current and/or past employers.</p>
+    </div>
+  </aside>
+</div>

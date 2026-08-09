@@ -1,7 +1,7 @@
 ---
 title: Signed JSON Web Tokens
 date: 2016-01-19 09:25 MST
-tags:
+tags: jwt, identity
 ---
 
 Let's continue using the analogies used in my [last

@@ -1,0 +1,19 @@
+<%
+prev_label ||= 'Previous'
+next_label ||= 'Next'
+%>
+<% if paginate && num_pages > 1 %>
+  <nav class="pager">
+    <% if prev_page %>
+      <a href="<%= prev_page.url %>"><%= prev_label %></a>
+    <% else %>
+      <span class="muted"><%= prev_label %></span>
+    <% end %>
+    <span class="count">Page <%= page_number %> of <%= num_pages %></span>
+    <% if next_page %>
+      <a href="<%= next_page.url %>"><%= next_label %></a>
+    <% else %>
+      <span class="muted"><%= next_label %></span>
+    <% end %>
+  </nav>
+<% end %>

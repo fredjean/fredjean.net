@@ -1,8 +1,7 @@
 ---
 title: Cups of Coffee
 date: 2016-03-10 09:25 MST
-tags:
-  - coffee
+tags: coffee
 ---
 
 ![coffee](/images/coffee.jpg)

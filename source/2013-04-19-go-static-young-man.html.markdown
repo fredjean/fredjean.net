@@ -1,7 +1,7 @@
 ---
 title: Go Static Young Man!
 date: 2013-04-19 16:35 MDT
-tags:
+tags: middleman, ruby
 ---
 
 There are many options available for blog posting. There are SaaS

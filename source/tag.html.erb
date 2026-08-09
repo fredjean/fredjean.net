@@ -2,24 +2,46 @@
 pageable: true
 per_page: 12
 ---
-<h1>Articles tagged '<%= tagname %>'</h1>
+<%
+tag_articles = blog.tags[tagname] || []
+years = tag_articles.map { |a| a.date.year }
+@active = :archive
+@home = false
+@dateline = [
+  'Subject',
+  tagname,
+  "#{tag_articles.size} article#{'s' unless tag_articles.size == 1}",
+  years.any? ? "#{years.min} &mdash; #{years.max}".html_safe : ''
+]
+related = tag_articles.flat_map(&:tags).uniq.reject { |t| t == tagname }
+                       .sort_by { |t| -blog.tags[t].size }.first(6)
+%>
+<div class="with-rail">
+  <div>
+    <h1 class="h1-display" style="margin-bottom: 28px;">Articles tagged <span style="color: var(--magenta);"><%= tagname %></span></h1>
 
-<% if paginate %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
+    <div class="row-list">
+      <% page_articles.each do |article| %>
+        <a class="pl row row--2col" href="<%= article.url %>">
+          <span class="row-date"><%= article.date.strftime('%b %Y') %></span>
+          <span>
+            <span class="row-title"><%= article.title %></span>
+            <span class="row-desc"><%= plain_excerpt(article, characters: 100) %></span>
+          </span>
+        </a>
+      <% end %>
+    </div>
 
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
-  <% end %>
-<% end %>
+    <%= partial 'partials/pager', locals: { prev_label: 'Previous', next_label: "Older articles tagged #{tagname} &rarr;".html_safe } %>
+  </div>
 
-<ul>
-  <% page_articles.each_with_index do |article, i| %>
-    <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-  <% end %>
-</ul>
-
-<% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
-  <% end %>
-<% end %>
+  <aside>
+    <p class="rail-label">Related subjects</p>
+    <div class="tag-cloud">
+      <% related.each do |t| %>
+        <a href="<%= tag_path(t) %>" class="tag tag-accent"><%= t %></a>
+      <% end %>
+    </div>
+    <p style="margin: 24px 0 0; font-size: 15px;"><a href="/archive/">All subjects &rarr;</a></p>
+  </aside>
+</div>

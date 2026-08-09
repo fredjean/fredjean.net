@@ -1,72 +1,20 @@
 <!doctype html>
 <html>
 <head>
-<!-- Use title if it's in the page YAML frontmatter -->
 <title><%= title %></title>
 <meta charset="utf-8" />
 <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%= stylesheet_link_tag 'all' %>
-</style>
-<script type="text/javascript" src="//use.typekit.net/gtk2ibo.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<link rel="alternate" type="application/rss+xml" title="RSS" href="https://feeds.feedburner.com/fredjean/outofmymind">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 </head>
 <body>
-<div class="page">
-  <sidebar class="byline">
-    <div class="nav-inner">
-      <ul>
-        <li>
-        <a href="/"> <%= image_tag 'avatar.png', class: 'avatar' %> </a>
-        </li>
-        <li>
-        <blockquote>
-          I fix the servers that run your serverless applications.
-        </blockquote>
-        </li>
-
-        <li>I share code on <a href="https://github.com/fredjean">GitHub</a>.</li>
-        <li>My LinkedIn profile is <a href="https://www.linkedin.com/in/fredjean/">here</a>.</li>
-        <li>
-        I have a <a href="/fredjean_pgp_public_key.asc">PGP public key</a> that you can use to send me private messages or to verify that I did indeed author one.</li>
-        <li>The opinions expressed here and elsewhere do not reflect the opinions of my current and/or past employers.</li>
-        <li>You can <a href="/contact/">reach out to me</a>.</li>
-      </ul>
-    </div>
-  </sidebar>
-  <div class="content">
+  <div class="shell">
+    <%= partial 'partials/masthead', locals: { home: @home, active: @active, dateline: @dateline } %>
     <%= yield %>
-  </div>
-    <footer>
-      <div>
-        <div class="recent">
-          <h2>Recent Articles</h2>
-          <ol>
-            <% blog.articles.sort { |a,b| (b.date <=> a.date) != 0 ?  b.date <=> a.date : a.title <=> b.title }[0...10].each do |article| %>
-              <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-          <% end %>
-          </ol>
-
-        </div>
-        <div class='by_year'>
-          <h2>By Year</h2>
-          <ol>
-            <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-              <li><%= link_to year, blog_year_path(year) %> (<%= articles.size %>)</a></li>
-        <% end %>
-        </ol>
-      </div>
-    </div>
-  </footer>
-  <footer>
-    <div class="nav-inner">
-        <p>&copy; 2007-<%= Time.now.year %> Frederic Jean</p>
-        <p><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Out of my mind...</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://fredjean.net" property="cc:attributionName" rel="cc:attributionURL">Frederic Jean</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
-    </div>
-  </footer>
+    <%= partial 'partials/colophon', locals: { full: @home } %>
   </div>
   <script id="dsq-count-scr" src="//fredjean-net.disqus.com/count.js" async></script>
   <script type="text/javascript" src="/javascripts/all.js"></script>
-  </body>
+</body>
 </html>

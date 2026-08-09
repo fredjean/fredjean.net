@@ -2,6 +2,7 @@
 title: PhantomJS, Capybaras, and Poodles
 date: 2014-10-20 10:13 MDT
 tags: phantomjs,testing,poodle,ssl,paypal
+summary: "A PhantomJS/Capybara test suite broke when Paypal disabled SSLv3 for POODLE — the fix was forcing TLSv1 in the Poltergeist driver options."
 ---
 
 ![Poodle source:

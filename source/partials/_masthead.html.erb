@@ -1,0 +1,30 @@
+<%
+nav_items = [
+  ['Archive', '/archive/', :archive],
+  ['About', '/about/', :about],
+  ['Contact', '/contact/', :contact],
+  ['RSS', '/feed.xml', :rss],
+]
+home ||= false
+active ||= nil
+dateline ||= []
+%>
+<header class="masthead">
+  <div class="masthead-row">
+    <% if home %>
+      <span class="brand brand-home">Out of my mind&hellip;</span>
+    <% else %>
+      <a class="brand brand-interior" href="/">Out of my mind&hellip;</a>
+    <% end %>
+    <nav>
+      <% nav_items.each do |label, path, key| %>
+        <a href="<%= path %>"<%= (' aria-current="page"').html_safe if active == key %>><%= label %></a>
+      <% end %>
+    </nav>
+  </div>
+  <hr class="rule-head">
+  <p class="dateline">
+    <% Array(dateline).each do |item| %><span><%= item %></span><% end %>
+  </p>
+  <hr class="rule-cut">
+</header>

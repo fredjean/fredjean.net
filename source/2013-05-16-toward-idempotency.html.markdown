@@ -2,7 +2,7 @@
 published: true
 title: Toward Idempotency
 date: "2013-05-16 11:31 MDT"
-tags: null
+tags: middleman, ruby, s3
 ---
 
 <blockquote>

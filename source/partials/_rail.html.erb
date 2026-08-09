@@ -1,0 +1,48 @@
+<aside class="rail">
+  <%= partial 'partials/byline', locals: {
+    size: 84,
+    blurb: 'Frederic Jean. Scheduling for intermodal traffic at BNSF &mdash; the right car, under the right cargo, at the right time. Nine years at AWS before that.'.html_safe,
+    link: '/about/'
+  } %>
+
+  <div>
+    <p class="rail-label">Index</p>
+    <div>
+      <% subject_groups.each do |name, count| %>
+        <% link_tag = data.back_issues.groups[name]&.first %>
+        <p class="leader-row">
+          <span><%= name %></span>
+          <span class="leader"></span>
+          <% if link_tag %>
+            <a href="<%= tag_path(link_tag) %>" class="leader-row-strong"><%= count %></a>
+          <% else %>
+            <span class="leader-row-strong"><%= count %></span>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+  <div>
+    <p class="rail-label">From the back issues</p>
+    <div class="link-list">
+      <% back_issues.each do |article| %>
+        <a class="pl" href="<%= article.url %>"><span class="title"><%= article.title %></span> <span class="year"><%= article.date.year %></span></a>
+      <% end %>
+    </div>
+  </div>
+
+  <div>
+    <p class="rail-label">Maintained in the open</p>
+    <div class="oss-list">
+      <div>
+        <span class="name">middleman-s3_sync</span>
+        <span class="desc">Middleman &rarr; S3, with CloudFront invalidation.</span>
+      </div>
+      <div>
+        <span class="name">jruby-memcache-client</span>
+        <span class="desc">Memcache for JRuby, multiple connection pools.</span>
+      </div>
+    </div>
+  </div>
+</aside>

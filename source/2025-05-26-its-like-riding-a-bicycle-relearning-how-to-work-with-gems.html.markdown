@@ -1,11 +1,8 @@
 ---
 title: "It's like riding a bicycle: relearning how to work with Gems"
 date: 2025-05-26 13:51 -0600
-tags:
-  - ruby
-  - gems
-  - amazon
-  - tooling
+tags: ruby, gems, amazon, tooling
+summary: "Nearly nine years at Amazon and AWS later, relearning bundle install and Gemfile management after internal tooling abstracted it all away."
 ---
 
 They say it's like riding a bicycle - once you learn, you never forget. But after nearly 8 years at Amazon, I'm discovering that muscle memory can get pretty rusty when it comes to Ruby gems and the broader open source ecosystem.

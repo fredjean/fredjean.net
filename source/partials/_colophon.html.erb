@@ -1,0 +1,16 @@
+<% full ||= false %>
+<hr class="rule-cut colophon-cut">
+<% if full %>
+  <footer class="colophon-full">
+    <p class="notice">&ldquo;Out of my mind&hellip;&rdquo; by Frederic Jean is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>. The opinions expressed here and elsewhere do not reflect the opinions of my current and/or past employers.</p>
+    <span class="spacer"></span>
+    <nav>
+      <a href="https://github.com/fredjean">GitHub</a>
+      <a href="https://www.linkedin.com/in/fredjean/">LinkedIn</a>
+      <a href="/feed.xml">RSS</a>
+    </nav>
+    <p>&copy; 2007&ndash;<%= Time.now.year %></p>
+  </footer>
+<% else %>
+  <p class="colophon-condensed">&copy; 2007&ndash;<%= Time.now.year %> Frederic Jean &middot; CC BY-SA 3.0 &middot; <a href="/feed.xml">RSS</a></p>
+<% end %>

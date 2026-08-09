@@ -1,12 +1,17 @@
-
-<div class='byline'>
-  <span class="author">
-    <a rel="author" href="https://plus.google.com/u/1/110971367658599641980?rel=author">
-      <img src="https://mediacdn.disqus.com/uploads/users/4818/831/avatar32.jpg?1365980001" width="16" height="16">Frederic Jean
-    </a>
-  </span>
-  <span>&nbsp;|&nbsp;</span>
-  <span class="comments"><%= link_to "Comments", article, anchor: "disqus_thread" %></span>
-  <span>&nbsp;|&nbsp;</span>
-  <span class="date"><%= article.date.strftime('%b %e, %Y') %></span>
+<%
+size ||= 84
+link ||= nil
+link_label ||= 'More &rarr;'.html_safe
+%>
+<div>
+  <p class="rail-label">The column</p>
+  <div class="column-block">
+    <div class="halftone portrait" style="width: <%= size %>px; height: <%= size %>px;">
+      <%= image_tag 'avatar.png', alt: 'Frederic Jean' %>
+    </div>
+    <p>
+      <%= blurb %>
+      <% if link %> <a href="<%= link %>"><%= link_label %></a><% end %>
+    </p>
+  </div>
 </div>

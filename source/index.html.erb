@@ -25,8 +25,7 @@ lead, rest = articles.first, articles.drop(1)
         <p class="standfirst"><%= lead.data['summary'] %></p>
         <hr class="rule-cut" style="margin: 22px 0 26px;">
       <% end %>
-      <div class="lead-body prose"><%= excerpt_for(lead, characters: 700) %></div>
-      <p class="continue-link"><a href="<%= lead.url %>">Continue reading &rarr;</a></p>
+      <div class="lead-body prose"><%= inject_code_captions(lead.body) %></div>
     </article>
 
     <hr class="rule-cut" style="margin: 0 0 28px;">

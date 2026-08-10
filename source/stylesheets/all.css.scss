@@ -205,10 +205,8 @@ a:hover {
   font-size: 40px; line-height: 1.08; letter-spacing: -0.025em;
   margin: 0 0 20px; margin-left: -0.035em; max-width: 18ch;
 }
-/* the lead excerpt is real (truncated) article body markup — headings, code
-   figures, inline code and all — so it takes the same .prose type rules the
-   article page uses, plus its own max-width cap. */
-.lead-body { max-width: 62ch; }
+/* the lead article body takes the same .prose type rules the article page uses */
+.lead-body { }
 .continue-link { margin: 18px 0 0; font-size: 15px; }
 
 .extracts { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 40px; }

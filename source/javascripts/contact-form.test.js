@@ -1,5 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { ContactFormHandler } from './contact-form.js';
+import './contact-form.js';
+
+const { ContactFormHandler } = window;
 
 describe('ContactFormHandler', () => {
   let form;

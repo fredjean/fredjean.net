@@ -167,6 +167,9 @@
     }
   }
 
+  // Exposed for tests; the IIFE keeps everything else out of the global scope
+  window.ContactFormHandler = ContactFormHandler;
+
   // Auto-initialize when DOM is ready
   if (typeof document !== 'undefined') {
     if (document.readyState === 'loading') {

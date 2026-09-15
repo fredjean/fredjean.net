@@ -20,6 +20,7 @@ dateline ||= []
       <% nav_items.each do |label, path, key| %>
         <a href="<%= path %>"<%= (' aria-current="page"').html_safe if active == key %>><%= label %></a>
       <% end %>
+      <button type="button" class="theme-toggle" hidden>Dark</button>
     </nav>
   </div>
   <hr class="rule-head">

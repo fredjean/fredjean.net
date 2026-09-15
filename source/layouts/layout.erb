@@ -5,6 +5,16 @@
 <meta charset="utf-8" />
 <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<script>
+  // Apply a saved theme choice before first paint to avoid a flash of the wrong theme.
+  try {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  } catch (e) {}
+</script>
 <%= stylesheet_link_tag 'all' %>
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 </head>
@@ -15,6 +25,7 @@
     <%= partial 'partials/colophon', locals: { full: @home } %>
   </div>
   <script id="dsq-count-scr" src="//fredjean-net.disqus.com/count.js" async></script>
+  <script type="text/javascript" src="/javascripts/theme.js"></script>
   <script type="text/javascript" src="/javascripts/all.js"></script>
 </body>
 </html>

@@ -1,23 +1,24 @@
 /* Rouge syntax theme tuned to the Broadsheet palette — ink text on the
-   --tint fill, keywords in magenta, strings in cyan-deep, comments grey italic. */
+   --tint fill, keywords in magenta, strings in cyan-deep, comments grey italic.
+   Colors come from the --code-* tokens in all.css.scss so they follow the theme. */
 .highlight {
-  background-color: #f8f4f4;
-  color: #201e1d;
+  background-color: var(--tint);
+  color: var(--ink);
 }
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 
 .highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf,
 .highlight .cm, .highlight .c1, .highlight .cs {
-  color: #7d7979;
+  color: var(--code-comment);
   font-style: italic;
 }
-.highlight .cp { color: #605d5d; font-weight: bold; }
+.highlight .cp { color: var(--code-meta); font-weight: bold; }
 
 .highlight .k, .highlight .kv, .highlight .kc, .highlight .kd,
 .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt,
 .highlight .o, .highlight .ow, .highlight .nd {
-  color: #aa0b56;
+  color: var(--code-keyword);
   font-weight: bold;
 }
 
@@ -25,32 +26,32 @@
 .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se,
 .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr,
 .highlight .s1, .highlight .ss {
-  color: #006786;
+  color: var(--code-string);
 }
 
 .highlight .m, .highlight .mb, .highlight .mx, .highlight .mf,
 .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il {
-  color: #004961;
+  color: var(--code-name);
 }
 
 .highlight .na, .highlight .no, .highlight .nv, .highlight .vc,
 .highlight .vg, .highlight .vi, .highlight .nl {
-  color: #004961;
+  color: var(--code-name);
 }
 
-.highlight .nb, .highlight .bp { color: #605d5d; }
-.highlight .nc, .highlight .nf, .highlight .fm { color: #201e1d; font-weight: bold; }
-.highlight .nn { color: #605d5d; }
-.highlight .ni { color: #aa0b56; }
-.highlight .ne { color: #aa0b56; font-weight: bold; }
+.highlight .nb, .highlight .bp { color: var(--code-meta); }
+.highlight .nc, .highlight .nf, .highlight .fm { color: var(--ink); font-weight: bold; }
+.highlight .nn { color: var(--code-meta); }
+.highlight .ni { color: var(--code-keyword); }
+.highlight .ne { color: var(--code-keyword); font-weight: bold; }
 
-.highlight .err { color: #201e1d; background-color: #ffdee6; }
-.highlight .gd { color: #201e1d; background-color: #ffdee6; }
-.highlight .gi { color: #201e1d; background-color: #e9f8ff; }
+.highlight .err { color: var(--ink); background-color: var(--code-del-bg); }
+.highlight .gd { color: var(--ink); background-color: var(--code-del-bg); }
+.highlight .gi { color: var(--ink); background-color: var(--code-ins-bg); }
 .highlight .ge { font-style: italic; }
 .highlight .gs { font-weight: bold; }
-.highlight .gh, .highlight .gu { color: #7d7979; }
-.highlight .gp { color: #605d5d; }
-.highlight .gr, .highlight .gt { color: #aa0b56; }
-.highlight .go { color: #7d7979; }
-.highlight .w { color: #bab6b6; }
+.highlight .gh, .highlight .gu { color: var(--code-comment); }
+.highlight .gp { color: var(--code-meta); }
+.highlight .gr, .highlight .gt { color: var(--code-keyword); }
+.highlight .go { color: var(--code-comment); }
+.highlight .w { color: var(--code-ws); }

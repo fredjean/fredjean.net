@@ -23,8 +23,59 @@
   --accent-2-100: #fff1f4;
   --accent-2-800: #790e3d;
 
+  /* Rouge syntax colors (github.css.scss) */
+  --code-comment: #7d7979;
+  --code-meta:    #605d5d;
+  --code-keyword: #aa0b56;
+  --code-string:  #006786;
+  --code-name:    #004961;
+  --code-ws:      #bab6b6;
+  --code-del-bg:  #ffdee6;
+  --code-ins-bg:  #e9f8ff;
+
+  --halftone-dot: rgba(0, 0, 0, 0.22);
+
   --font-heading: "Source Serif 4", Georgia, serif;
   --font-body: "Source Serif 4", Georgia, serif;
+
+  color-scheme: light;
+}
+
+/* — dark theme — newsprint under a reading lamp: warm charcoal ground, bone ink,
+   accents lifted so they hold contrast. Follows the OS preference unless the
+   reader picks a theme with the masthead toggle (data-theme on <html>). */
+@mixin dark-tokens {
+  --paper:      #1b1a19;
+  --ink:        #e9e5e2;
+  --cyan:       #3fb6db;
+  --cyan-deep:  #6cc8e6;
+  --magenta:    #ff5ca3;
+  --tint:       #252322;
+  --rule:       #3b3837;
+
+  --accent-100: #0f3342;
+  --accent-600: #66c5e4;
+  --accent-700: #6cc8e6;
+  --accent-800: #b3e6f8;
+  --accent-2-100: #431429;
+  --accent-2-800: #ffb8d3;
+
+  --code-comment: #8f8a88;
+  --code-meta:    #b0aba8;
+  --code-keyword: #ff7ab5;
+  --code-string:  #6cc8e6;
+  --code-name:    #a3dcf0;
+  --code-ws:      #4a4644;
+  --code-del-bg:  #4a1a2c;
+  --code-ins-bg:  #0f3342;
+
+  --halftone-dot: rgba(0, 0, 0, 0.3);
+
+  color-scheme: dark;
+}
+:root[data-theme="dark"] { @include dark-tokens; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include dark-tokens; }
 }
 
 @mixin ink($pct) {
@@ -123,6 +174,13 @@ a:hover {
 .masthead nav a:hover { color: var(--magenta); text-decoration: none; }
 .masthead nav a[aria-current="page"] { color: var(--cyan-deep); }
 
+.theme-toggle {
+  font: inherit; letter-spacing: inherit; text-transform: inherit;
+  color: var(--ink); background: none; border: 0; padding: 0; cursor: pointer;
+}
+.theme-toggle:hover { color: var(--magenta); }
+.theme-toggle[hidden] { display: none; }
+
 .dateline {
   display: flex; justify-content: space-between; flex-wrap: wrap;
   gap: 8px 28px; margin: 0; padding: 11px 0;
@@ -194,7 +252,7 @@ a:hover {
 }
 .halftone::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.22) 30%, transparent 32%);
+  background-image: radial-gradient(circle, var(--halftone-dot) 30%, transparent 32%);
   background-size: 3px 3px; mix-blend-mode: multiply;
 }
 

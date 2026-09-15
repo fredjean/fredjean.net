@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.4.2'
+ruby '4.0.7'
 
 gem 'middleman', '>= 4.5.0'
 gem 'middleman-blog'
